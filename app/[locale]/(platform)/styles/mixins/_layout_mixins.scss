@@ -1,0 +1,43 @@
+@use './../variables/screens';
+
+// Body Styles --------------------------------- //
+
+@mixin paddingBottomBody($paddingBottom) {
+	padding-bottom: $paddingBottom 0;
+
+	@media (min-height: screens.$large-phone-screen) {
+		padding-bottom: 2rem;
+	}
+}
+
+// Body Styles --------------------------------- //
+
+// Section Styles ------------------------------ //
+
+@mixin paddingSection($paddingY, $paddingX) {
+	padding: $paddingY $paddingX;
+
+	@media (min-width: screens.$small-phones) {
+		padding: 3rem 3rem;
+	}
+
+	@media (min-width: screens.$phones-small-tablets) {
+		padding: 4rem 4rem;
+	}
+
+	@media (min-width: screens.$tablets-small-screens) {
+		padding: 5rem 5rem;
+	}
+
+	@media (min-width: screens.$screens) {
+		padding: 8rem 8rem;
+	}
+}
+
+@mixin neomorphismBoxStyle() {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	backdrop-filter: blur(4px);
+}
+
+// Section Styles ------------------------------ //

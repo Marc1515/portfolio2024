@@ -1,0 +1,82 @@
+@use './../../../styles/mixins/mixins';
+@use './../../../styles/variables/variables';
+
+.navbar {
+	@include mixins.flexNavbar(flex, column, nowrap, center, center);
+	background-color: rgba($color: variables.$navbar-background, $alpha: 1);
+	color: variables.$text-color;
+	transition: ease-in-out 0.3s;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(15px);
+
+	.navbar__list {
+		@include mixins.flexNavbar(flex, column, nowrap, center, center);
+		max-width: 1000px;
+		margin: 0 auto;
+
+		.navbar__item {
+			height: auto;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			@include mixins.typographySize(1.8rem);
+			font-weight: 500;
+			transition: ease-in-out 0.3s;
+
+			.navbar__link {
+				position: relative;
+				text-align: center;
+				@include mixins.linksUnderline(10px, 20px);
+				transition: ease-in-out 0.3s;
+				cursor: pointer;
+
+				&.active {
+					color: variables.$tertiary-background-color; // Aplicar el color deseado para el estado activo
+
+					.navbar__underline {
+						// Estilos para la línea subrayada en el estado activo
+						height: 100%;
+						width: 100%;
+						transform: scale(1) translateY(-10px);
+						opacity: 1;
+					}
+				}
+
+				.navbar__underline {
+					position: absolute;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					z-index: 3;
+					border-bottom: solid 2px variables.$tertiary-background-color;
+					transform: scale(0) translateY(50px);
+					border-radius: 15px;
+					opacity: 0;
+					transition: ease-in-out 0.5s;
+				}
+
+				&:hover {
+					color: variables.$tertiary-background-color;
+
+					.navbar__underline {
+						height: 100%;
+						width: 100%;
+						transform: scale(1) translateY(-10px);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: variables.$phones-small-tablets) {
+	.navbar-scrolled {
+		height: 4rem;
+		background-color: rgba($color: variables.$navbar-background, $alpha: 0.6);
+
+		.navbar__list .navbar__item {
+			font-size: 1.2rem;
+		}
+	}
+}

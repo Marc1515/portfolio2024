@@ -1,0 +1,31 @@
+// Navbar
+$navbar-background: rgb(27, 90, 157);
+
+// Backgrounds Section colors
+$primary-background-color: #205295;
+$secondary-background-color: #144272;
+$tertiary-background-color: #0a2647;
+$quaternary-background-color: #081d36;
+$quinary-background-color: #051323;
+
+// Others
+$background-color: #202731;
+$accent-color: #9a23b2;
+$text-color: #fff;
+
+:root {
+	// Navbar
+	--navbar-background: #{$navbar-background};
+
+	// Backgrounds Section colors
+	--primary-background-color: #{$primary-background-color};
+	--secondary-background-color: #{$secondary-background-color};
+	--tertiary-background-color: #{$tertiary-background-color};
+	--quaternary-background-color: #{$quaternary-background-color};
+	--quinary-background-color: #{$quinary-background-color};
+
+	// Others
+	--background-color: #{$background-color};
+	--accent-color: #{$accent-color};
+	--text-color: #{$text-color};
+}

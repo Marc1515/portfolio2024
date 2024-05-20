@@ -1,0 +1,97 @@
+@use './../variables/screens';
+
+// Technologies Styles ------------------------------------------------------------------------------------- //
+
+// Tech Title ------------------------------------ //
+
+@mixin paddingTopTechTitle($padding) {
+	padding-top: $padding;
+
+	@media (min-width: screens.$phones-small-tablets) {
+		padding-top: 5rem;
+	}
+}
+
+// Tech Title ------------------------------------ //
+
+// Tech Card  ------------------------------------ //
+
+@mixin paddingTechCard($padding) {
+	padding: $padding;
+
+	@media (min-width: screens.$tablets-small-screens) {
+		padding: 3.5rem;
+	}
+}
+
+@mixin widthTechCard($widht) {
+	width: $widht;
+
+	@media (min-width: screens.$phones-small-tablets) {
+		width: 47%;
+	}
+}
+
+// Tech Card Title  ------------------------------ //
+
+@mixin fontSizeTitleTechCard($size) {
+	font-size: $size;
+
+	@media (min-width: screens.$tablets-small-screens) {
+		font-size: 2rem;
+	}
+}
+
+// Tech Card Title  ------------------------------ //
+
+// Tech Card IMG  -------------------------------- //
+
+@mixin techImgWidth($widht) {
+	width: $widht;
+
+	@media (min-width: screens.$tablets-small-screens) {
+		width: 4.5rem;
+	}
+}
+
+// Tech Card IMG  -------------------------------- //
+
+// Tech Card Dropdown  --------------------------- //
+
+@mixin fontSizeTitleDropdown($size) {
+	font-size: $size;
+
+	@media (min-width: screens.$tablets-small-screens) {
+		font-size: 1.4rem;
+	}
+}
+
+// Tech Card Dropdown Arrow Icon  ---------------- //
+
+@mixin sizeArrowIcon($size) {
+	font-size: $size;
+
+	@media (min-width: screens.$tablets-small-screens) {
+		font-size: 1.6rem;
+	}
+}
+
+// Tech Card Dropdown Arrow Icon  ---------------- //
+
+// Tech Card Dropdown Text  ---------------------- //
+
+@mixin fontSizeDropdownText($size) {
+	font-size: $size;
+
+	@media (min-width: screens.$tablets-small-screens) {
+		font-size: 1.2rem;
+	}
+}
+
+// Tech Card Dropdown Text  ---------------------- //
+
+// Tech Card Dropdown  --------------------------- //
+
+// Tech Card  ------------------------------------ //
+
+// Technologies Styles ------------------------------------------------------------------------------------- //

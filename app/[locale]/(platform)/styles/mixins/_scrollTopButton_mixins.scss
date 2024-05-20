@@ -1,0 +1,13 @@
+@use './../variables/screens';
+
+@mixin fontSizeScrollTopButton($size) {
+	font-size: $size;
+
+	@media (min-height: screens.$large-phone-screen) {
+		font-size: 4rem;
+	}
+
+	@media (min-height: screens.$super-large-screen) {
+		font-size: 5rem;
+	}
+}

@@ -1,0 +1,78 @@
+@use './../variables/screens';
+
+// Marc Styles ---------------------------------------------------------------------------------------- //
+
+// Marc Section ------------------------------ //
+
+@mixin flexMarcSection($flex, $direction, $cut, $justify, $align, $gap) {
+	display: $flex;
+	flex-flow: $direction $cut;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+
+	@media (min-height: screens.$large-phone-screen) {
+		justify-content: start;
+		gap: 4rem;
+	}
+
+	@media (min-width: screens.$small-phones) {
+		flex-flow: row-reverse nowrap;
+	}
+}
+
+// Marc IMG Container ------------------------ //
+
+@mixin widthImgContainer($width) {
+	width: $width;
+
+	@media (min-width: screens.$screens) {
+		width: 70%;
+	}
+}
+
+// Marc IMG Container ------------------------ //
+
+// Marc Wrapper ------------------------------ //
+
+@mixin gapMarcWrapper($gap) {
+	gap: $gap;
+
+	@media (min-height: screens.$large-phone-screen) {
+		gap: 7rem;
+	}
+
+	@media (min-width: screens.$small-phones) {
+		gap: 4rem;
+	}
+
+	@media (min-width: screens.$tablets-small-screens) {
+		gap: 7rem;
+	}
+}
+
+@mixin fontSizeAutoTyped($size) {
+	font-size: $size;
+
+	@media (min-height: screens.$large-phone-screen) {
+		font-size: 1.2rem;
+	}
+
+	@media (min-width: screens.$tablets-small-screens) {
+		font-size: 1.4rem;
+	}
+}
+
+@mixin H4Height($height) {
+	height: $height;
+
+	@media (min-width: screens.$small-phones) {
+		height: 4rem;
+	}
+}
+
+// Marc Wrapper ------------------------------ //
+
+// Marc Section ------------------------------ //
+
+// Marc Styles ---------------------------------------------------------------------------------------- //

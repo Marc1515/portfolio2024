@@ -1,0 +1,49 @@
+@use './../variables/screens';
+
+// Contact Styles ----------------------------------------------------------------------------------------- //
+
+// Contact Section ------------------------------ //
+
+@mixin heightContactSection($height) {
+	height: $height;
+
+	@media (min-height: #{screens.$large-phone-screen}) and (min-width: #{screens.$phones-small-tablets}) {
+		height: 100vh;
+	}
+}
+
+// Contact Section ------------------------------ //
+
+@mixin flexContactCards($flex, $direction, $cut, $justify) {
+	display: $flex;
+	flex-flow: $direction $cut;
+	justify-content: $justify;
+
+	@media (min-height: screens.$super-large-screen) {
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@mixin heightCard($height) {
+	height: $height;
+
+	@media (min-height: screens.$large-phone-screen) {
+		height: 350px;
+	}
+
+	@media (min-height: screens.$super-large-screen) {
+		height: 400px;
+	}
+}
+
+@mixin widthContactCard($widht) {
+	width: $widht;
+
+	@media (min-width: screens.$phones-small-tablets) {
+		width: 47%;
+	}
+}
+
+// Contact Styles ----------------------------------------------------------------------------------------- //
