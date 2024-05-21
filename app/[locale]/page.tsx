@@ -4,6 +4,7 @@ import { MenuProvider } from "./(platform)/context/MenuContext";
 import AboutComponent from "./(platform)/_components/about/AboutComponent";
 import initTranslations from "@/app/i18n";
 import TechnologiesComponent from "./(platform)/_components/Technologies/TechnologiesComponent";
+import ProjectsComponent from "./(platform)/_components/Projects/ProjectsComponent";
 
 interface HomeProps {
   params: {
@@ -45,6 +46,11 @@ export default async function Home({ params: { locale } }: HomeProps) {
       t("technologies_wordpressWoocommerce_explanation") || "",
     // Añadir más traducciones aquí según sea necesario
   };
+  const ProjectsTranslations = {
+    projects_title: t("projects_title") || "",
+    projects_intro: t("projects_intro") || "",
+    // Añadir más traducciones aquí según sea necesario
+  };
 
   return (
     <MenuProvider>
@@ -53,6 +59,7 @@ export default async function Home({ params: { locale } }: HomeProps) {
         <MarcSection translations={MarcSectionTranslations} />
         <AboutComponent translations={AboutTranslations} />
         <TechnologiesComponent translations={TechnologiesTranslations} />
+        <ProjectsComponent translations={ProjectsTranslations} />
       </main>
     </MenuProvider>
   );
