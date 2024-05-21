@@ -7,21 +7,26 @@ import CV from "./../../assets/MEQ_ESP.pdf";
 import "./MarcComponent.scss";
 import { useInitReveal } from "../../hooks/useRevealHooks";
 import Image from "next/image";
+import { MarcSectionTypes } from "./Types";
 
-export const MarcSection = () => {
+export const MarcSection = ({ translations }: MarcSectionTypes) => {
+  const { writerText, cvText } = translations;
+
   useEffect(() => {
-    const options = {
-      strings: ["WELLCOME TO MY PORTFOLIO AS A WEB DEVELOPER"],
-      typeSpeed: 40,
-      backSpeed: 10,
-      loop: true,
-      showCursor: false, // Opción para ocultar el cursor
-    };
-    const typed = new Typed("#typed-heading", options);
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+    if (writerText) {
+      const options = {
+        strings: [writerText],
+        typeSpeed: 40,
+        backSpeed: 10,
+        loop: true,
+        showCursor: false, // Opción para ocultar el cursor
+      };
+      const typed = new Typed("#typed-heading", options);
+      return () => {
+        typed.destroy();
+      };
+    }
+  }, [writerText]);
 
   // Usar el hook directamente
   useInitReveal(".marcSection");
@@ -46,7 +51,7 @@ export const MarcSection = () => {
             <div className="buttonContainer">
               <button className="buttonContainer__Button">
                 <a className="buttonContainer__Link" href={CV} download>
-                  DOWNLOAD MY CV
+                  {cvText}
                 </a>
               </button>
             </div>
