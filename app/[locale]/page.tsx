@@ -5,6 +5,7 @@ import AboutComponent from "./(platform)/_components/about/AboutComponent";
 import initTranslations from "@/app/i18n";
 import TechnologiesComponent from "./(platform)/_components/Technologies/TechnologiesComponent";
 import ProjectsComponent from "./(platform)/_components/Projects/ProjectsComponent";
+import ContactComponent from "./(platform)/_components/Contact/ContactComponent";
 
 interface HomeProps {
   params: {
@@ -51,6 +52,12 @@ export default async function Home({ params: { locale } }: HomeProps) {
     projects_intro: t("projects_intro") || "",
     // Añadir más traducciones aquí según sea necesario
   };
+  const ContactTranslations = {
+    contact_title: t("contact_title") || "",
+    contact_intro: t("contact_intro") || "",
+    contact_send_btn: t("contact_send_btn") || "",
+    // Añadir más traducciones aquí según sea necesario
+  };
 
   return (
     <MenuProvider>
@@ -60,6 +67,7 @@ export default async function Home({ params: { locale } }: HomeProps) {
         <AboutComponent translations={AboutTranslations} />
         <TechnologiesComponent translations={TechnologiesTranslations} />
         <ProjectsComponent translations={ProjectsTranslations} />
+        <ContactComponent translations={ContactTranslations} />
       </main>
     </MenuProvider>
   );
