@@ -3,6 +3,7 @@ import { MarcSection } from "./(platform)/_components/MarcSection";
 import { MenuProvider } from "./(platform)/context/MenuContext";
 import AboutComponent from "./(platform)/_components/about/AboutComponent";
 import initTranslations from "@/app/i18n";
+import TechnologiesComponent from "./(platform)/_components/Technologies/TechnologiesComponent";
 
 interface HomeProps {
   params: {
@@ -13,14 +14,35 @@ interface HomeProps {
 export default async function Home({ params: { locale } }: HomeProps) {
   const { t } = await initTranslations(locale, ["default"]);
   const MarcSectionTranslations = {
-    writerText: t("writer_text") || "Default Text",
-    cvText: t("cv_text") || "Download CV",
+    writer_text: t("writer_text") || "Default Text",
+    cv_text: t("cv_text") || "Download CV",
     // Añadir más traducciones aquí según sea necesario
   };
   const AboutTranslations = {
-    aboutTitle: t("about_title") || "About Me",
-    firstText: t("first_text") || "Download CV",
-    secondText: t("second_text") || "Download CV",
+    about_title: t("about_title") || "",
+    first_text: t("first_text") || "",
+    second_text: t("second_text") || "",
+    // Añadir más traducciones aquí según sea necesario
+  };
+  const TechnologiesTranslations = {
+    technologies_title: t("technologies_title") || "",
+    technologies_intro: t("technologies_intro") || "",
+    technologies_basic_title: t("technologies_basic_title") || "",
+    technologies_htmlCssJs_explanation:
+      t("technologies_htmlCssJs_explanation") || "",
+    technologies_cssLibraries_title: t("technologies_cssLibraries_title") || "",
+    technologies_tailwindBootstrap_explanation:
+      t("technologies_tailwindBootstrap_explanation") || "",
+    technologies_Pre_Processors_title:
+      t("technologies_Pre_Processors_title") || "",
+    technologies_sassLess_explanation:
+      t("technologies_sassLess_explanation") || "",
+    technologies_typescriptRxjs_explanation:
+      t("technologies_typescriptRxjs_explanation") || "",
+    technologies_reactAngular_explanation:
+      t("technologies_reactAngular_explanation") || "",
+    technologies_wordpressWoocommerce_explanation:
+      t("technologies_wordpressWoocommerce_explanation") || "",
     // Añadir más traducciones aquí según sea necesario
   };
 
@@ -30,6 +52,7 @@ export default async function Home({ params: { locale } }: HomeProps) {
         <HeaderComponent />
         <MarcSection translations={MarcSectionTranslations} />
         <AboutComponent translations={AboutTranslations} />
+        <TechnologiesComponent translations={TechnologiesTranslations} />
       </main>
     </MenuProvider>
   );

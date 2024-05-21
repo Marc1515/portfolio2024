@@ -1,7 +1,7 @@
 export interface MarcSectionTypes {
   translations: {
-    writerText: string;
-    cvText: string;
+    writer_text: string;
+    cv_text: string;
     // Añadir más campos de traducción aquí según sea necesario
   };
 }

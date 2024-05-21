@@ -1,8 +1,8 @@
 export interface AboutTypes {
   translations: {
-    aboutTitle: string;
-    firstText: string;
-    secondText: string;
+    about_title: string;
+    first_text: string;
+    second_text: string;
     // Añadir más campos de traducción aquí según sea necesario
   };
 }

@@ -10,12 +10,12 @@ import Image from "next/image";
 import { MarcSectionTypes } from "./Types";
 
 export const MarcSection = ({ translations }: MarcSectionTypes) => {
-  const { writerText, cvText } = translations;
+  const { writer_text, cv_text } = translations;
 
   useEffect(() => {
-    if (writerText) {
+    if (writer_text) {
       const options = {
-        strings: [writerText],
+        strings: [writer_text],
         typeSpeed: 40,
         backSpeed: 10,
         loop: true,
@@ -26,7 +26,7 @@ export const MarcSection = ({ translations }: MarcSectionTypes) => {
         typed.destroy();
       };
     }
-  }, [writerText]);
+  }, [writer_text]);
 
   // Usar el hook directamente
   useInitReveal(".marcSection");
@@ -51,7 +51,7 @@ export const MarcSection = ({ translations }: MarcSectionTypes) => {
             <div className="buttonContainer">
               <button className="buttonContainer__Button">
                 <a className="buttonContainer__Link" href={CV} download>
-                  {cvText}
+                  {cv_text}
                 </a>
               </button>
             </div>

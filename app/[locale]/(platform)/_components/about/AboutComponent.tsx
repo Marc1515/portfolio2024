@@ -11,7 +11,7 @@ import { useScrollReveal } from "../../hooks/useRevealHooks";
 import { AboutTypes } from "./Types";
 
 const AboutComponent = ({ translations }: AboutTypes) => {
-  const { aboutTitle, firstText, secondText } = translations;
+  const { about_title, first_text, second_text } = translations;
   useScrollReveal(
     ".aboutTittleContainer, .textContainer__Text1, .textContainer__Text2, .socialMediaIconsContainer__icon"
   );
@@ -22,12 +22,12 @@ const AboutComponent = ({ translations }: AboutTypes) => {
       <section id="about" className="aboutSection">
         <div className="aboutSectionWrapper">
           <div className="aboutTittleContainer">
-            <h1 className="aboutTittleContainer__Tittle">{aboutTitle}</h1>
+            <h1 className="aboutTittleContainer__Tittle">{about_title}</h1>
           </div>
           <div className="aboutContentWrapper">
             <div className="textContainer">
-              <p className="textContainer__Text1">{firstText}</p>
-              <p className="textContainer__Text2">{secondText}</p>
+              <p className="textContainer__Text1">{first_text}</p>
+              <p className="textContainer__Text2">{second_text}</p>
             </div>
             <div className="socialMediaIconsContainer">
               <a

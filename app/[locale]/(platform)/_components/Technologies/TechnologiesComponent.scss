@@ -1,0 +1,99 @@
+@use './../../styles/mixins/mixins';
+@use './../../styles/variables/variables';
+
+.technologiesSection {
+	width: 100%;
+	height: 100%;
+	background-color: variables.$tertiary-background-color;
+
+	.technologieSectionWrapper {
+		max-width: 1000px;
+		margin: 0 auto;
+
+		.technologiesTittleContainer {
+			@include mixins.paddingTopTechTitle(3rem);
+		}
+
+		.technologiesTextContainer {
+			padding: 5rem 0;
+			width: 100%;
+
+			.technologiesTittleContainer__Text {
+				font-size: 1.2rem;
+			}
+		}
+
+		.TechCardsWrapper {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+			gap: 2rem;
+			width: 100%;
+
+			.TechCard {
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: start;
+				gap: 3rem;
+				@include mixins.widthTechCard(100%);
+				@include mixins.paddingTechCard(2.5rem);
+				@include mixins.neomorphismBoxStyle();
+
+				.TechCard__Tittle {
+					@include mixins.fontSizeTitleTechCard(1.6rem);
+				}
+
+				.TechCard__WrapperImgs {
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-around;
+
+					.TechCard__Img {
+						@include mixins.techImgWidth(3.2rem);
+					}
+				}
+
+				.TechCard__DropDown {
+					width: 100%;
+					cursor: pointer;
+
+					.TechCard__DropDownTittle {
+						display: flex;
+						flex-flow: row nowrap;
+						justify-content: space-between;
+
+						&:first-child {
+							@include mixins.fontSizeTitleDropdown(1rem);
+						}
+
+						.TechCard__ArrowIcon {
+							@include mixins.sizeArrowIcon(1.2rem);
+
+							&:active {
+								transform: rotate(180deg);
+								transition: 0.3s ease-out;
+							}
+						}
+					}
+
+					.TechCard__Text {
+						position: relative;
+						max-height: 0;
+						padding-top: 1.5rem;
+						@include mixins.fontSizeDropdownText(0.8rem);
+						visibility: hidden;
+						overflow: hidden;
+						transition:
+							max-height 0.3s ease-in-out,
+							visibility 0.3s ease-in-out;
+					}
+				}
+
+				.TechCard__DropDown.open .TechCard__Text {
+					max-height: 500px;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
