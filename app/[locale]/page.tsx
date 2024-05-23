@@ -1,13 +1,13 @@
-import { HeaderComponent } from "./(platform)/_components/Header";
-import { MarcSection } from "./(platform)/_components/MarcSection";
-import { MenuProvider } from "./(platform)/context/MenuContext";
-import TranslationsProvider from "./(platform)/context/TranslationsProvider";
-import { AboutComponent } from "./(platform)/_components/About";
+import { HeaderComponent } from "@/app/[locale]/(platform)/_components/Header";
+import { MarcSection } from "@/app/[locale]/(platform)/_components/MarcSection";
+import { MenuProvider } from "@/app/[locale]/(platform)/context/MenuContext";
+import TranslationsProvider from "@/app/[locale]/(platform)/context/TranslationsProvider";
+import { AboutComponent } from "@/app/[locale]/(platform)/_components/About";
 import initTranslations from "@/app/i18n";
-import { TechnologiesComponent } from "./(platform)/_components/Technologies";
-import { ProjectsComponent } from "./(platform)/_components/Projects";
-import { ContactComponent } from "./(platform)/_components/Contact";
-import "./(platform)/styles/styles.scss";
+import { TechnologiesComponent } from "@/app/[locale]/(platform)/_components/Technologies";
+import { ProjectsComponent } from "@/app/[locale]/(platform)/_components/Projects";
+import { ContactComponent } from "@/app/[locale]/(platform)/_components/Contact";
+import "@/app/[locale]/(platform)/styles/styles.scss";
 
 interface HomeProps {
   params: {
