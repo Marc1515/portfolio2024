@@ -5,7 +5,7 @@ import { useMenuContext } from "../../../context/MenuContext";
 import Link from "next/link";
 import "./NavbarComponent.scss";
 
-const NavbarComponent: React.FC = () => {
+export const NavbarComponent: React.FC = () => {
   const [activeLink, setActiveLink] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0); // Referencia para almacenar la última posición de scroll
@@ -112,5 +112,3 @@ const NavbarComponent: React.FC = () => {
     </nav>
   );
 };
-
-export default NavbarComponent;

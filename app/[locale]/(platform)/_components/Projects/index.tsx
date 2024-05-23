@@ -11,7 +11,7 @@ import { useScrollReveal } from "../../hooks/useRevealHooks";
 import Image from "next/image";
 import { ProjectsTypes } from "./Types";
 
-const ProjectsComponent = ({ translations }: ProjectsTypes) => {
+export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
   const { projects_title, projects_intro } = translations;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -117,5 +117,3 @@ const ProjectsComponent = ({ translations }: ProjectsTypes) => {
     </>
   );
 };
-
-export default ProjectsComponent;

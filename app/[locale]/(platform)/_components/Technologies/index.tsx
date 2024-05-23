@@ -8,7 +8,7 @@ import { useScrollReveal } from "../../hooks/useRevealHooks";
 import Image from "next/image";
 import { TechnologiesTypes } from "./Types";
 
-const TechnologiesComponent = ({ translations }: TechnologiesTypes) => {
+export const TechnologiesComponent = ({ translations }: TechnologiesTypes) => {
   const {
     technologies_title,
     technologies_intro,
@@ -35,7 +35,7 @@ const TechnologiesComponent = ({ translations }: TechnologiesTypes) => {
 
   return (
     <>
-      {<div className="spacer layer2"></div>}
+      <div className="spacer layer2"></div>
       <section id="technologies" className="technologiesSection">
         <div className="technologieSectionWrapper">
           <div className="technologiesTittleContainer">
@@ -277,5 +277,3 @@ const TechnologiesComponent = ({ translations }: TechnologiesTypes) => {
     </>
   );
 };
-
-export default TechnologiesComponent;

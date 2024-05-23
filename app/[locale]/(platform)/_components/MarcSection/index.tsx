@@ -61,5 +61,3 @@ export const MarcSection = ({ translations }: MarcSectionTypes) => {
     </>
   );
 };
-
-export default MarcSection;

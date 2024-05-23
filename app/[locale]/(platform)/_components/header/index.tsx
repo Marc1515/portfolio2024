@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useMenuContext } from "../../context/MenuContext";
-import BurguerButtonComponent from "./burguerButton/BurguerButtonComponent";
-import NavbarComponent from "./Navbar/NavbarComponent";
+import { BurguerButtonComponent } from "./BurguerButton";
+import { NavbarComponent } from "./Navbar";
 import "./HeaderComponent.scss";
 import { useInitReveal } from "../../hooks/useRevealHooks";
 
@@ -53,5 +53,3 @@ export const HeaderComponent: React.FC = () => {
     </>
   );
 };
-
-export default HeaderComponent;

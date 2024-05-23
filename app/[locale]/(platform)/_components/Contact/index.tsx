@@ -5,7 +5,7 @@ import "./ContactComponent.scss";
 import { useScrollReveal } from "../../hooks/useRevealHooks";
 import { ContactTypes } from "./Types";
 
-const ContactComponent = ({ translations }: ContactTypes) => {
+export const ContactComponent = ({ translations }: ContactTypes) => {
   const { contact_title, contact_intro, contact_send_btn } = translations;
 
   useScrollReveal(
@@ -57,5 +57,3 @@ const ContactComponent = ({ translations }: ContactTypes) => {
     </>
   );
 };
-
-export default ContactComponent;

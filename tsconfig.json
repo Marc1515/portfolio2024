@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "declaration.d.ts"  // Asegúrate de incluir esta línea
-, "app/[locale]/(platform)/_components/header/Navbar/NavbarComponent.tsx"  ],
+    "declaration.d.ts", // Asegúrate de incluir esta línea
+    "app/[locale]/(platform)/_components/header/Navbar/index.tsx"
+  ],
   "exclude": ["node_modules"]
 }

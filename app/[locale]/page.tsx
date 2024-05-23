@@ -1,11 +1,11 @@
-import { HeaderComponent } from "./(platform)/_components/header/HeaderComponent";
+import { HeaderComponent } from "./(platform)/_components/Header";
 import { MarcSection } from "./(platform)/_components/MarcSection";
 import { MenuProvider } from "./(platform)/context/MenuContext";
-import AboutComponent from "./(platform)/_components/about/AboutComponent";
+import { AboutComponent } from "./(platform)/_components/About";
 import initTranslations from "@/app/i18n";
-import TechnologiesComponent from "./(platform)/_components/Technologies/TechnologiesComponent";
-import ProjectsComponent from "./(platform)/_components/Projects/ProjectsComponent";
-import ContactComponent from "./(platform)/_components/Contact/ContactComponent";
+import { TechnologiesComponent } from "./(platform)/_components/Technologies";
+import { ProjectsComponent } from "./(platform)/_components/Projects";
+import { ContactComponent } from "./(platform)/_components/Contact";
 
 interface HomeProps {
   params: {
@@ -61,7 +61,7 @@ export default async function Home({ params: { locale } }: HomeProps) {
 
   return (
     <MenuProvider>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <main>
         <HeaderComponent />
         <MarcSection translations={MarcSectionTranslations} />
         <AboutComponent translations={AboutTranslations} />

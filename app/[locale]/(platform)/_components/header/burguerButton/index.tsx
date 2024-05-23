@@ -3,7 +3,7 @@
 import { useMenuContext } from "../../../context/MenuContext";
 import "./BurguerButtonComponent.scss";
 
-const BurguerButtonComponent: React.FC = () => {
+export const BurguerButtonComponent: React.FC = () => {
   const { toggleMenu, burguerButtonOpen } = useMenuContext();
 
   const handleToggle = () => {
@@ -19,5 +19,3 @@ const BurguerButtonComponent: React.FC = () => {
     </div>
   );
 };
-
-export default BurguerButtonComponent;
