@@ -12,7 +12,7 @@
 			nowrap,
 			space-between,
 			center,
-			1rem
+			0rem
 		);
 		max-width: 1000px;
 		margin: 0 auto;
@@ -20,7 +20,9 @@
 
 		.imgContainer {
 			display: block;
-			padding: 2rem 3rem;
+			padding: 1rem 1rem;
+			padding-bottom: 2rem;
+			margin-top: 3rem;
 			@include mixins.neomorphismBoxStyle();
 			@include mixins.widthImgContainer(100%);
 

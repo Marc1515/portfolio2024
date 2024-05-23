@@ -12,8 +12,8 @@
 	gap: $gap;
 
 	@media (min-height: screens.$large-phone-screen) {
-		justify-content: start;
-		gap: 4rem;
+		justify-content: space-between;
+		gap: 0;
 	}
 
 	@media (min-width: screens.$small-phones) {
@@ -27,7 +27,7 @@
 	width: $width;
 
 	@media (min-width: screens.$screens) {
-		width: 70%;
+		width: 100%;
 	}
 }
 
