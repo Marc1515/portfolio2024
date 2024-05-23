@@ -5,11 +5,10 @@ import { useMenuContext } from "../../context/MenuContext";
 import { BurguerButtonComponent } from "./BurguerButton";
 import { NavbarComponent } from "./Navbar";
 import "./HeaderComponent.scss";
-import { useInitReveal } from "../../hooks/useRevealHooks";
 
 export const HeaderComponent: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const { toggleMenu, navbarOpen } = useMenuContext();
+  const { navbarOpen } = useMenuContext();
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -37,8 +36,6 @@ export const HeaderComponent: React.FC = () => {
       document.body.style.overflow = "visible";
     };
   }, [navbarOpen]);
-
-  /* useInitReveal(".burguerButton, .header"); */
 
   return (
     <>
