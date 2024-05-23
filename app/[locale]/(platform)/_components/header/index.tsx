@@ -38,7 +38,7 @@ export const HeaderComponent: React.FC = () => {
     };
   }, [navbarOpen]);
 
-  useInitReveal(".burguerButton, .header");
+  /* useInitReveal(".burguerButton, .header"); */
 
   return (
     <>

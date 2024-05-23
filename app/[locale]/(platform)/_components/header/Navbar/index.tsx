@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useMenuContext } from "../../../context/MenuContext";
+import { LanguageButton } from "./LanguageButton/LanguageButton";
 import Link from "next/link";
 import "./NavbarComponent.scss";
 
@@ -56,6 +57,7 @@ export const NavbarComponent: React.FC = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
+      <LanguageButton />
       <ul className="navbar__list">
         <li className="navbar__item">
           <Link

@@ -1,6 +1,7 @@
 import { HeaderComponent } from "./(platform)/_components/Header";
 import { MarcSection } from "./(platform)/_components/MarcSection";
 import { MenuProvider } from "./(platform)/context/MenuContext";
+import TranslationsProvider from "./(platform)/context/TranslationsProvider";
 import { AboutComponent } from "./(platform)/_components/About";
 import initTranslations from "@/app/i18n";
 import { TechnologiesComponent } from "./(platform)/_components/Technologies";
@@ -14,8 +15,10 @@ interface HomeProps {
   };
 }
 
+const i18nNamespaces = ["default"];
+
 export default async function Home({ params: { locale } }: HomeProps) {
-  const { t } = await initTranslations(locale, ["default"]);
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
   const MarcSectionTranslations = {
     writer_text: t("writer_text") || "Default Text",
     cv_text: t("cv_text") || "Download CV",
@@ -61,15 +64,21 @@ export default async function Home({ params: { locale } }: HomeProps) {
   };
 
   return (
-    <MenuProvider>
-      <main>
-        <HeaderComponent />
-        <MarcSection translations={MarcSectionTranslations} />
-        <AboutComponent translations={AboutTranslations} />
-        <TechnologiesComponent translations={TechnologiesTranslations} />
-        <ProjectsComponent translations={ProjectsTranslations} />
-        <ContactComponent translations={ContactTranslations} />
-      </main>
-    </MenuProvider>
+    <TranslationsProvider
+      resources={resources}
+      locale={locale}
+      namespaces={i18nNamespaces}
+    >
+      <MenuProvider>
+        <main>
+          <HeaderComponent />
+          <MarcSection translations={MarcSectionTranslations} />
+          <AboutComponent translations={AboutTranslations} />
+          <TechnologiesComponent translations={TechnologiesTranslations} />
+          <ProjectsComponent translations={ProjectsTranslations} />
+          <ContactComponent translations={ContactTranslations} />
+        </main>
+      </MenuProvider>
+    </TranslationsProvider>
   );
 }

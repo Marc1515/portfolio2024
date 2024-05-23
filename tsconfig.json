@@ -28,6 +28,6 @@
     ".next/types/**/*.ts",
     "declaration.d.ts", // Asegúrate de incluir esta línea
     "app/[locale]/(platform)/_components/header/Navbar/index.tsx"
-  ],
+, "app/[locale]/(platform)/_components/Header/LanguageChanger.js"  ],
   "exclude": ["node_modules"]
 }
