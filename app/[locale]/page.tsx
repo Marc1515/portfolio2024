@@ -6,6 +6,7 @@ import initTranslations from "@/app/i18n";
 import { TechnologiesComponent } from "./(platform)/_components/Technologies";
 import { ProjectsComponent } from "./(platform)/_components/Projects";
 import { ContactComponent } from "./(platform)/_components/Contact";
+import "./(platform)/styles/styles.scss";
 
 interface HomeProps {
   params: {
