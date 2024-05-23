@@ -27,10 +27,10 @@ export const ContactComponent = ({ translations }: ContactTypes) => {
             <div className="contactCards__Card">
               <BsWhatsapp className="contactCards__Icon" />
               <span className="contactCards__IconName">WhatsApp</span>
-              <span className="contactCards__Info">0451 565 137</span>
+              <span className="contactCards__Info">628 24 63 63</span>
               <a
                 className="contactCards__Link"
-                href="whatsapp://send?phone=+61451565137"
+                href="whatsapp://send?phone=+34628246363"
                 target="_blank"
                 rel="noreferrer"
               >
