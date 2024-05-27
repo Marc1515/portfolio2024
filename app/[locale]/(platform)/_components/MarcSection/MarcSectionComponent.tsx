@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Typed from "typed.js";
 import fotoPerfil from "./../../assets/img/fotoPerfil.png";
 import CV from "./../../assets/MEQ_ESP.pdf";
-import "./MarcComponent.scss";
+import "./MarcSectionComponent.scss";
 import { useInitReveal } from "../../hooks/useRevealHooks";
 import Image from "next/image";
 import { MarcSectionTypes } from "./Types";

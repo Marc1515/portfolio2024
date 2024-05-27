@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useMenuContext } from "../../context/MenuContext";
-import { BurguerButtonComponent } from "./BurguerButton";
-import { NavbarComponent } from "./Navbar";
+import { BurguerButtonComponent } from "./BurguerButton/BurguerButtonComponent";
+import { NavbarComponent } from "./Navbar/NavbarComponent";
 import "./HeaderComponent.scss";
 
 export const HeaderComponent: React.FC = () => {
