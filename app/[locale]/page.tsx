@@ -9,7 +9,7 @@ import { ProjectsComponent } from "./(platform)/_components/Projects";
 import { ContactComponent } from "./(platform)/_components/Contact";
 import "./(platform)/styles/styles.scss";
 
-interface HomeProps {
+interface HomePageProps {
   params: {
     locale: string;
   };
@@ -17,7 +17,7 @@ interface HomeProps {
 
 const i18nNamespaces = ["default"];
 
-export default async function Home({ params: { locale } }: HomeProps) {
+const HomePage = async ({ params: { locale } }: HomePageProps) => {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
   const MarcSectionTranslations = {
     writer_text: t("writer_text") || "Default Text",
@@ -81,4 +81,15 @@ export default async function Home({ params: { locale } }: HomeProps) {
       </MenuProvider>
     </TranslationsProvider>
   );
+};
+
+export async function generateStaticParams() {
+  // Suponiendo que tus locales soportados son 'en' y 'es'
+  const locales = ["en", "es", "ca"];
+
+  return locales.map((locale) => ({
+    locale,
+  }));
 }
+
+export default HomePage;
