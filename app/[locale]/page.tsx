@@ -1,9 +1,9 @@
-import { HeaderComponent } from "./(platform)/_components/Header/HeaderComponent";
-import { MarcSection } from "./(platform)/_components/MarcSection/MarcSectionComponent";
 import { MenuProvider } from "./(platform)/context/MenuContext";
 import TranslationsProvider from "./(platform)/context/TranslationsProvider";
-import { AboutComponent } from "./(platform)/_components/About/AboutComponent";
 import initTranslations from "@/app/i18n";
+import { HeaderComponent } from "./(platform)/_components/Header/HeaderComponent";
+import { MarcSection } from "./(platform)/_components/MarcSection/MarcSectionComponent";
+import { AboutComponent } from "./(platform)/_components/About/AboutComponent";
 import { TechnologiesComponent } from "./(platform)/_components/Technologies/TechnologiesComponent";
 import { ProjectsComponent } from "./(platform)/_components/Projects/ProjectsComponent";
 import { ContactComponent } from "./(platform)/_components/Contact/ContactComponent";
