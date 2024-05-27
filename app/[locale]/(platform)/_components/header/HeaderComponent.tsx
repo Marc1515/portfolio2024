@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useMenuContext } from "../../context/MenuContext";
-import { BurguerButtonComponent } from "./BurguerButton/BurguerButtonComponent";
+import { BurguerButtonComponent } from "./burguerButton/BurguerButtonComponent";
 import { NavbarComponent } from "./Navbar/NavbarComponent";
 import "./HeaderComponent.scss";
 
