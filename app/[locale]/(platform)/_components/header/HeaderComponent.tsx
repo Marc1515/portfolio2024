@@ -6,7 +6,7 @@ import { BurguerButtonComponent } from "./BurguerButton/BurguerButtonComponent";
 import { NavbarComponent } from "./Navbar/NavbarComponent";
 import "./HeaderComponent.scss";
 
-export const HeaderComponent: React.FC = () => {
+export const HeaderComponent = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const { navbarOpen } = useMenuContext();
 
