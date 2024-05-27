@@ -6,7 +6,7 @@ import { BurguerButtonComponent } from "./BurguerButton/BurguerButtonComponent";
 import { NavbarComponent } from "./Navbar/NavbarComponent";
 import "./HeaderComponent.scss";
 
-function HeaderComponent() {
+export const HeaderComponent = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const { navbarOpen } = useMenuContext();
 
@@ -49,6 +49,4 @@ function HeaderComponent() {
       </header>
     </>
   );
-}
-
-export default HeaderComponent;
+};

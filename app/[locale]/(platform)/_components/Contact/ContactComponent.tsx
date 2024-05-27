@@ -1,9 +1,9 @@
 "use client";
+import { ContactTypes } from "./Types";
+import { useScrollReveal } from "../../hooks/useRevealHooks";
 import { MdOutlineMail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import "./ContactComponent.scss";
-import { useScrollReveal } from "../../hooks/useRevealHooks";
-import { ContactTypes } from "./Types";
 
 export const ContactComponent = ({ translations }: ContactTypes) => {
   const { contact_title, contact_intro, contact_send_btn } = translations;
