@@ -2,7 +2,6 @@ import path from 'path';
 
 const nextConfig = {
   webpack: (config, { isServer }) => {
-    output: "export", // Agrega esta línea para habilitar la exportación estática
     config.module.rules.push({
       test: /\.pdf$/,
       use: [
