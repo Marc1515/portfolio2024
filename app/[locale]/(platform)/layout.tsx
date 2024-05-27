@@ -1,7 +1,7 @@
 import { MenuProvider } from "./context/MenuContext";
 import TranslationsProvider from "./context/TranslationsProvider";
 import initTranslations from "@/app/i18n";
-import { HeaderComponent } from "./_components/Header/HeaderComponent";
+import { HeaderComponent } from "./_components/header/HeaderComponent";
 import { MarcSection } from "./_components/MarcSection/MarcSectionComponent";
 import { AboutComponent } from "./_components/about/AboutComponent";
 import { TechnologiesComponent } from "./_components/Technologies/TechnologiesComponent";
