@@ -17,8 +17,10 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".", // Asegúrate de tener esto
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"], // Asegúrate de tener esto para la raíz del proyecto
+      "@components/*": ["app/(platform)/_components/*"]
     }
   },
   "include": [
@@ -26,8 +28,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "declaration.d.ts", // Asegúrate de incluir esta línea
-    "app/[locale]/(platform)/_components/Header/Navbar/NavbarComponent.tsx"
-, "app/[locale]/(platform)/_components/Header/LanguageChanger.js"  ],
+    "declaration.d.ts",
+    "app/[locale]/(platform)/_components/Header/Navbar/NavbarComponent.tsx",
+    "app/[locale]/(platform)/_components/Header/LanguageChanger.js"
+  ],
   "exclude": ["node_modules"]
 }
