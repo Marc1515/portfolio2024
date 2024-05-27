@@ -10,7 +10,7 @@ import "./AboutComponent.scss";
 import { useScrollReveal } from "../../hooks/useRevealHooks";
 import { AboutTypes } from "./Types";
 
-export const AboutComponent = ({ translations }: AboutTypes) => {
+function AboutComponent({ translations }: AboutTypes) {
   const { about_title, first_text, second_text } = translations;
   useScrollReveal(
     ".aboutTittleContainer, .textContainer__Text1, .textContainer__Text2, .socialMediaIconsContainer__icon"
@@ -60,4 +60,6 @@ export const AboutComponent = ({ translations }: AboutTypes) => {
       </section>
     </>
   );
-};
+}
+
+export default AboutComponent;
