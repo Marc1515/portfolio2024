@@ -4,9 +4,9 @@ import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import TechImages from "./TechnologiesData";
 import "./TechnologiesComponent.scss";
-import { useScrollReveal } from "../../hooks/useRevealHooks";
 import Image from "next/image";
 import { TechnologiesTypes } from "./Types";
+import { useScrollReveal } from "../../hooks/useRevealHooks";
 
 export const TechnologiesComponent = ({ translations }: TechnologiesTypes) => {
   const {
@@ -23,9 +23,9 @@ export const TechnologiesComponent = ({ translations }: TechnologiesTypes) => {
     technologies_wordpressWoocommerce_explanation,
   } = translations;
 
-  const [openSection, setOpenSection] = useState(null);
+  const [openSection, setOpenSection] = useState<string | null>(null);
 
-  const toggleSection = (section: any) => {
+  const toggleSection = (section: string) => {
     setOpenSection((current) => (current === section ? null : section));
   };
 
