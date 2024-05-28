@@ -43,15 +43,15 @@ export const LanguageButton = () => {
   };
 
   return (
-    <div className="mt-10 flex justify-center gap-10">
-      <label>
+    <div className="w-100 md: my-10 flex justify-center gap-10">
+      <label className="h-20">
         <input
           type="radio"
           name="language"
           value="en"
           checked={currentLocale === "en"}
           onChange={() => handleChange("en")}
-          style={{ display: "none" }}
+          className="size-7 appearance-none"
         />
         <Image
           src="/flags/england-flag.png"
@@ -60,14 +60,14 @@ export const LanguageButton = () => {
           height={25}
         />
       </label>
-      <label>
+      <label className="h-20">
         <input
           type="radio"
           name="language"
           value="es"
           checked={currentLocale === "es"}
           onChange={() => handleChange("es")}
-          style={{ display: "none" }}
+          className="size-7 appearance-none"
         />
         <Image
           src="/flags/spain-flag.png"
@@ -76,14 +76,14 @@ export const LanguageButton = () => {
           height={25}
         />
       </label>
-      <label>
+      <label className="h-20">
         <input
           type="radio"
           name="language"
           value="ca"
           checked={currentLocale === "ca"}
           onChange={() => handleChange("ca")}
-          style={{ display: "none" }}
+          className="size-7 appearance-none"
         />
         <Image
           src="/flags/catalonia-flag.png"

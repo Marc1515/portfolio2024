@@ -10,6 +10,7 @@
 
 	@media (min-width: screens.$phones-small-tablets) {
 		flex-flow: row nowrap;
+		justify-content: start;
 	}
 }
 

@@ -64,7 +64,9 @@ export const NavbarComponent: React.FC = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
-      <LanguageButton />
+      <div className="wrapper-languageButton">
+        <LanguageButton />
+      </div>
       <ul className="navbar__list">
         <li className="navbar__item">
           <Link
@@ -118,6 +120,7 @@ export const NavbarComponent: React.FC = () => {
           </Link>
         </li>
       </ul>
+      <div></div>
     </nav>
   );
 };

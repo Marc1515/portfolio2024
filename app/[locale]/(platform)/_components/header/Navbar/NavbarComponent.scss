@@ -10,10 +10,13 @@
 	height: 100%;
 	backdrop-filter: blur(15px);
 
+	.wrapper-languageButton{
+		width: 30%;
+	}
+
 	.navbar__list {
 		@include mixins.flexNavbar(flex, column, nowrap, center, center);
-		max-width: 1000px;
-		margin: 0 auto;
+		width: 70%;
 
 		.navbar__item {
 			height: auto;
