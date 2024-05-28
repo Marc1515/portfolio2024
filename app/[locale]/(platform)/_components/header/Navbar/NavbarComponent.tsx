@@ -46,6 +46,13 @@ export const NavbarComponent: React.FC = () => {
   };
 
   useEffect(() => {
+    // Restaurar la posición de desplazamiento si está guardada
+    const savedScrollPosition = sessionStorage.getItem("scrollPosition");
+    if (savedScrollPosition) {
+      window.scrollTo(0, parseFloat(savedScrollPosition));
+      sessionStorage.removeItem("scrollPosition");
+    }
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
