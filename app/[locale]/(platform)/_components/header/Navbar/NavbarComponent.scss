@@ -2,7 +2,7 @@
 @use "./../../../styles/variables/variables";
 
 .navbar {
-  @include mixins.flexNavbar(flex, column, nowrap, flex-start, center);
+  @include mixins.flexNavbar(flex, column, nowrap, center, center);
   background-color: rgba($color: variables.$navbar-background, $alpha: 1);
   color: variables.$text-color;
   transition: ease-in-out 0.3s;

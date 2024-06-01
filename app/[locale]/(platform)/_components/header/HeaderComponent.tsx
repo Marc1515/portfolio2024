@@ -6,6 +6,7 @@ import { BurguerButtonComponent } from "./burguerButton/BurguerButtonComponent";
 import { NavbarComponent } from "./Navbar/NavbarComponent";
 import "./HeaderComponent.scss";
 import { HeaderTypes } from "./Types";
+import { LanguageButton } from "./Navbar/LanguageButton/LanguageButton";
 
 export const HeaderComponent = ({ translations }: HeaderTypes) => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -42,6 +43,7 @@ export const HeaderComponent = ({ translations }: HeaderTypes) => {
     <>
       {windowWidth < 767 && (
         <div className="burguerButton">
+          <LanguageButton />
           <BurguerButtonComponent />
         </div>
       )}

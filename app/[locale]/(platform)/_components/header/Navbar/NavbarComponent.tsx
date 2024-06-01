@@ -68,9 +68,7 @@ export const NavbarComponent = ({ translations }: NavbarTypes) => {
 
   return (
     <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
-      <div className="wrapper-languageButton">
-        <LanguageButton />
-      </div>
+      <div className="wrapper-languageButton">{/* <LanguageButton /> */}</div>
       <ul className="navbar__list">
         <li className="navbar__item">
           <Link
