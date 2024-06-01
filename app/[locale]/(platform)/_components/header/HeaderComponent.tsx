@@ -10,8 +10,8 @@ import { LanguageButton } from "./Navbar/LanguageButton/LanguageButton";
 
 export const HeaderComponent = ({ translations }: HeaderTypes) => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const [showLanguageButton, setShowLanguageButton] = useState(true);
-  const { navbarOpen } = useMenuContext();
+  const { navbarOpen, showLanguageButton, setShowLanguageButton } =
+    useMenuContext();
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -42,7 +42,7 @@ export const HeaderComponent = ({ translations }: HeaderTypes) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 500) {
+      if (window.scrollY > 100) {
         setShowLanguageButton(false);
       } else {
         setShowLanguageButton(true);
@@ -54,7 +54,7 @@ export const HeaderComponent = ({ translations }: HeaderTypes) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [setShowLanguageButton]);
 
   return (
     <>

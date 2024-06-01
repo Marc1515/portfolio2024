@@ -13,6 +13,7 @@
     transform: translateY(
       -20px
     ); // Mover hacia arriba para desaparecer suavemente
+    pointer-events: none; // Deshabilitar interacción cuando está oculto
   }
 
   .selector {

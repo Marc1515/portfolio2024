@@ -6,6 +6,8 @@ interface MenuContextType {
   toggleMenu: () => void;
   navbarOpen: boolean;
   burguerButtonOpen: boolean;
+  showLanguageButton: boolean;
+  setShowLanguageButton: (show: boolean) => void;
 }
 
 export const MenuContext = createContext<MenuContextType | undefined>(
@@ -19,14 +21,27 @@ interface MenuProviderProps {
 export const MenuProvider = ({ children }: MenuProviderProps) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [burguerButtonOpen, setBurguerButtonOpen] = useState(true);
+  const [showLanguageButton, setShowLanguageButton] = useState(true);
 
   const toggleMenu = () => {
-    setNavbarOpen((prev) => !prev);
+    const newNavbarOpen = !navbarOpen;
+    setNavbarOpen(newNavbarOpen);
     setBurguerButtonOpen((prev) => !prev);
+    if (window.scrollY > 500) {
+      setShowLanguageButton(newNavbarOpen); // Mostrar si se abre, ocultar si se cierra
+    }
   };
 
   return (
-    <MenuContext.Provider value={{ toggleMenu, navbarOpen, burguerButtonOpen }}>
+    <MenuContext.Provider
+      value={{
+        toggleMenu,
+        navbarOpen,
+        burguerButtonOpen,
+        showLanguageButton,
+        setShowLanguageButton,
+      }}
+    >
       {children}
     </MenuContext.Provider>
   );
