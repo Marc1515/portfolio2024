@@ -19,6 +19,13 @@ const i18nNamespaces = ["default"];
 
 const HomePage = async ({ params: { locale } }: HomePageProps) => {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const HeaderTranslations = {
+    about_title: t("about_title") || "",
+    technologies_title: t("technologies_title") || "",
+    projects_title: t("projects_title") || "",
+    contact_title: t("contact_title") || "",
+    // Añadir más traducciones aquí según sea necesario
+  };
   const MarcSectionTranslations = {
     writer_text: t("writer_text") || "Default Text",
     cv_text: t("cv_text") || "Download CV",
@@ -71,7 +78,7 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
     >
       <MenuProvider>
         <main>
-          <HeaderComponent />
+          <HeaderComponent translations={HeaderTranslations} />
           <MarcSection translations={MarcSectionTranslations} />
           <AboutComponent translations={AboutTranslations} />
           <TechnologiesComponent translations={TechnologiesTranslations} />

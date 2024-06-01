@@ -5,8 +5,12 @@ import { useMenuContext } from "../../../context/MenuContext";
 import { LanguageButton } from "./LanguageButton/LanguageButton";
 import Link from "next/link";
 import "./NavbarComponent.scss";
+import { NavbarTypes } from "./Types";
 
-export const NavbarComponent: React.FC = () => {
+export const NavbarComponent = ({ translations }: NavbarTypes) => {
+  const { about_title, technologies_title, projects_title, contact_title } =
+    translations;
+
   const [activeLink, setActiveLink] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const lastScrollY = useRef(0); // Referencia para almacenar la última posición de scroll
@@ -83,7 +87,8 @@ export const NavbarComponent: React.FC = () => {
             onClick={handleClick}
             className={`navbar__link ${activeLink === "about" ? "active" : ""}`}
           >
-            About Me<span className="navbar__underline"></span>
+            {about_title}
+            <span className="navbar__underline"></span>
           </Link>
         </li>
         <li className="navbar__item">
@@ -94,7 +99,8 @@ export const NavbarComponent: React.FC = () => {
               activeLink === "technologies" ? "active" : ""
             }`}
           >
-            Technologies<span className="navbar__underline"></span>
+            {technologies_title}
+            <span className="navbar__underline"></span>
           </Link>
         </li>
         <li className="navbar__item">
@@ -105,7 +111,8 @@ export const NavbarComponent: React.FC = () => {
               activeLink === "projects" ? "active" : ""
             }`}
           >
-            Projects<span className="navbar__underline"></span>
+            {projects_title}
+            <span className="navbar__underline"></span>
           </Link>
         </li>
         <li className="navbar__item">
@@ -116,7 +123,8 @@ export const NavbarComponent: React.FC = () => {
               activeLink === "contact" ? "active" : ""
             }`}
           >
-            Contact<span className="navbar__underline"></span>
+            {contact_title}
+            <span className="navbar__underline"></span>
           </Link>
         </li>
       </ul>

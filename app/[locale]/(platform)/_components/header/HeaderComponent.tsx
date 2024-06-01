@@ -5,8 +5,9 @@ import { useMenuContext } from "../../context/MenuContext";
 import { BurguerButtonComponent } from "./burguerButton/BurguerButtonComponent";
 import { NavbarComponent } from "./Navbar/NavbarComponent";
 import "./HeaderComponent.scss";
+import { HeaderTypes } from "./Types";
 
-export const HeaderComponent = () => {
+export const HeaderComponent = ({ translations }: HeaderTypes) => {
   const [windowWidth, setWindowWidth] = useState(0);
   const { navbarOpen } = useMenuContext();
 
@@ -45,7 +46,7 @@ export const HeaderComponent = () => {
         </div>
       )}
       <header className={`header ${navbarOpen ? "" : "header--hidden"}`}>
-        <NavbarComponent />
+        <NavbarComponent translations={translations} />
       </header>
     </>
   );
