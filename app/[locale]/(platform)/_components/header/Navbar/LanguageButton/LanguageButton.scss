@@ -5,12 +5,13 @@
   padding: 0;
   margin: 0rem;
   z-index: 4;
+  width: 100%;
 
   .selector {
     position: relative;
     width: 60%;
     background-color: var(--smoke-white);
-    height: 80px;
+    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -32,8 +33,8 @@
 
       .selector-item_label {
         position: relative;
-        height: 35px;
-        width: 40px;
+        height: 25px;
+        width: 30px;
         text-align: center;
         border-radius: 50%;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.6); // Sombra por defecto
