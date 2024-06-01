@@ -1,0 +1,69 @@
+@use "./../../../../styles/variables/variables";
+
+.container {
+  position: relative;
+  background-color: rgba($color: variables.$navbar-background, $alpha: 1);
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .selector {
+    position: relative;
+    width: 80%;
+    background-color: var(--smoke-white);
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+
+    .selector-item {
+      position: relative;
+      flex-basis: calc(70% / 3);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .selector-item_radio {
+        appearance: none;
+        display: none;
+      }
+
+      .selector-item_label {
+        position: relative;
+        height: 35px;
+        width: 40px;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.6); // Sombra por defecto
+        transition: transform 0.5s, box-shadow 0.5s, filter 0.5s;
+        transform: translateY(0);
+        cursor: pointer;
+
+        img {
+          filter: grayscale(100%);
+          transition: filter 0.5s;
+        }
+
+        &:hover img {
+          filter: none; // Volver al color original cuando se hace hover
+        }
+      }
+
+      input.selector-item_radio:checked + .selector-item_label {
+        box-shadow: none; // Eliminar sombra cuando está seleccionado
+        transform: translateY(3px); // Simular la bajada del botón
+
+        img {
+          filter: none; // Volver al color original cuando está seleccionado
+        }
+      }
+    }
+  }
+}
