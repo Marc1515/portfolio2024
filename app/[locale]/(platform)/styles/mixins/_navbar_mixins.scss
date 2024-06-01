@@ -14,6 +14,14 @@
 	}
 }
 
+@mixin wrapperLanguageButtonWidth($width) {
+	width: $width;
+
+	@media (min-width: screens.$phones-small-tablets){
+		width: 30%;
+	}
+}
+
 @mixin typographySize($size) {
 	font-size: $size;
 

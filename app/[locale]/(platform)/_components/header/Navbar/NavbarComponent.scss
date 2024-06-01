@@ -11,7 +11,10 @@
 	backdrop-filter: blur(15px);
 
 	.wrapper-languageButton{
-		width: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include mixins.wrapperLanguageButtonWidth(100%)
 	}
 
 	.navbar__list {

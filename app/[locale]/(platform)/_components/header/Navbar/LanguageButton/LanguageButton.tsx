@@ -43,7 +43,7 @@ export const LanguageButton = () => {
   };
 
   return (
-    <div className="w-100 md: my-10 flex justify-center gap-10">
+    <div className="w-100 mb-10 md:mb-0 flex justify-center items-center gap-10">
       <label className="h-20">
         <input
           type="radio"
