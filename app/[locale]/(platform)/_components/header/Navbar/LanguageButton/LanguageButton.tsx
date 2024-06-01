@@ -7,7 +7,11 @@ import i18nConfig from "@/i18nConfig";
 import Image from "next/image";
 import "./LanguageButton.scss";
 
-export const LanguageButton = () => {
+interface LanguageButtonProps {
+  show: boolean;
+}
+
+export const LanguageButton = ({ show }: LanguageButtonProps) => {
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
@@ -55,7 +59,7 @@ export const LanguageButton = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`container ${show ? "" : "hide"}`}>
       <div className="selector">
         <div className="selector-item">
           <input
