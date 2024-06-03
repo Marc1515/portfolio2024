@@ -1,4 +1,4 @@
-@use './../variables/screens';
+@use "./../../styles/variables/screens";
 
 // Projects Styles ---------------------------------------------------------------------------------------- //
 
@@ -17,29 +17,29 @@
 // Project Card  --------------------------------- //
 
 @mixin paddingProjectsCard($padding) {
-	padding: $padding;
+  padding: $padding;
 
-	@media (min-width: screens.$tablets-small-screens) {
-		padding: 3.5rem;
-	}
+  @media (min-width: screens.$tablets-small-screens) {
+    padding: 3.5rem;
+  }
 }
 
 @mixin widthProjectCard($widht) {
-	width: $widht;
+  width: $widht;
 
-	@media (min-width: screens.$phones-small-tablets) {
-		width: 47%;
-	}
+  @media (min-width: screens.$phones-small-tablets) {
+    width: 47%;
+  }
 }
 
 // Project Card Title  --------------------------- //
 
 @mixin fontSizeTitleProjectCard($size) {
-	font-size: $size;
+  font-size: $size;
 
-	@media (min-width: screens.$tablets-small-screens) {
-		font-size: 2rem;
-	}
+  @media (min-width: screens.$tablets-small-screens) {
+    font-size: 2rem;
+  }
 }
 
 // Project Card Title  --------------------------- //
@@ -47,11 +47,11 @@
 // Project Card IMG  ----------------------------- //
 
 @mixin projectTechImgWidth($widht) {
-	width: $widht;
+  width: $widht;
 
-	@media (min-width: screens.$tablets-small-screens) {
-		width: 3.5rem;
-	}
+  @media (min-width: screens.$tablets-small-screens) {
+    width: 3.5rem;
+  }
 }
 
 // Project Card IMG  ----------------------------- //

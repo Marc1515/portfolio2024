@@ -8,6 +8,7 @@ import { TechnologiesComponent } from "./_components/Technologies/TechnologiesCo
 import { ProjectsComponent } from "./_components/Projects/ProjectsComponent";
 import { ContactComponent } from "./_components/Contact/ContactComponent";
 import "./styles/styles.scss";
+import ScrollTopButtonComponent from "./_components/ScrollTopButton/ScrollTopButtonComponent";
 
 interface HomePageProps {
   params: {
@@ -79,6 +80,7 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
       <MenuProvider>
         <main>
           <HeaderComponent translations={HeaderTranslations} />
+          <ScrollTopButtonComponent />
           <MarcSection translations={MarcSectionTranslations} />
           <AboutComponent translations={AboutTranslations} />
           <TechnologiesComponent translations={TechnologiesTranslations} />

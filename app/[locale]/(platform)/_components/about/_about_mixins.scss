@@ -1,0 +1,143 @@
+@use "./../../styles/variables/screens";
+
+// About Styles ---------------------------------------------------------------------------------------- //
+
+// About Title --------------------------------- //
+
+@mixin paddingTopTitleAbout($padding) {
+  padding-top: $padding;
+
+  @media (min-width: screens.$phones-small-tablets) {
+    padding-top: 5rem;
+  }
+
+  @media (min-width: screens.$tablets-small-screens) {
+    padding-top: 20rem;
+  }
+
+  @media (min-width: screens.$screens) {
+    padding-top: 3rem;
+  }
+}
+
+// About Title --------------------------------- //
+
+// About Section Wrapper ----------------------- //
+
+@mixin gapAboutSectionWrapper($gap) {
+  gap: $gap;
+
+  @media (min-width: screens.$phones-small-tablets) {
+    gap: 8rem;
+  }
+}
+
+// About Section Wrapper ----------------------- //
+
+// About Content Wrapper ----------------------- //
+
+@mixin flexAboutContentWrapper($flex, $direction, $cut, $justify) {
+  display: $flex;
+  flex-flow: $direction $cut;
+  justify-content: $justify;
+
+  @media (min-width: screens.$tablets-small-screens) {
+    flex-direction: row;
+  }
+}
+
+// About Content Wrapper ----------------------- //
+
+// About Text Container ------------------------ //
+
+@mixin maxWidthTextContainer($max) {
+  max-width: $max;
+
+  @media (min-width: screens.$phones-small-tablets) {
+    max-width: 600px;
+  }
+
+  @media (min-width: screens.$tablets-small-screens) {
+    max-width: 650px;
+  }
+
+  @media (min-width: screens.$screens) {
+    max-width: 700px;
+  }
+}
+
+// About Text Container ------------------------ //
+
+// About Text 1 ------------------------------- //
+
+@mixin fontSizeText($fontSize) {
+  font-size: $fontSize;
+
+  @media (min-height: screens.$large-phone-screen) {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: screens.$small-phones) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: screens.$phones-small-tablets) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: screens.$tablets-small-screens) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: screens.$screens) {
+    font-size: 1.3rem;
+  }
+}
+
+// About Text 1 ------------------------------- //
+
+// Social Media Icons ------------------------- //
+
+@mixin flexSocialMediaIconsContainer($flex, $direction, $cut, $justify) {
+  display: $flex;
+  flex-flow: $direction $cut;
+  justify-content: $justify;
+
+  @media (min-width: screens.$tablets-small-screens) {
+    flex-flow: column nowrap;
+    justify-content: start;
+    gap: 7rem;
+  }
+
+  @media (min-width: screens.$screens) {
+    gap: 4rem;
+  }
+}
+
+@mixin sizeSocialMediaIcons($size) {
+  font-size: $size;
+
+  @media (min-height: screens.$large-phone-screen) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: screens.$phones-small-tablets) {
+    font-size: 1.8rem;
+  }
+
+  @media (min-width: screens.$screens) {
+    font-size: 1.2rem;
+  }
+}
+
+@mixin paddingSocialMediaIcons($paddingY, $paddingX) {
+  padding: $paddingY $paddingX;
+
+  @media (min-width: screens.$tablets-small-screens) {
+    padding: 0;
+  }
+}
+
+// Social Media Icons ------------------------- //
+
+// About Styles ---------------------------------------------------------------------------------------- //
