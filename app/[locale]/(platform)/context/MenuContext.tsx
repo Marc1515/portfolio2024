@@ -10,9 +10,7 @@ interface MenuContextType {
   setShowLanguageButton: (show: boolean) => void;
 }
 
-export const MenuContext = createContext<MenuContextType | undefined>(
-  undefined
-);
+export const MenuContext = createContext<MenuContextType | null>(null);
 
 interface MenuProviderProps {
   children: ReactNode;
