@@ -1,25 +1,33 @@
-@use './../variables/screens';
+@use "./../variables/screens";
 
 // Header Styles ------------------------------------------------------------------------ //
 
 @mixin heightHeader($height) {
-	height: $height;
+  height: $height;
 
-	@media (min-width: screens.$phones-small-tablets) {
-		height: 8rem;
-	}
+  @media (min-width: screens.$phones-small-tablets) {
+    height: 8rem;
+  }
 
-	@media (min-width: screens.$screens) {
-		height: 5rem;
-	}
+  @media (min-width: screens.$screens) {
+    height: 5rem;
+  }
 }
 
 @mixin hiddenHeader($transalteX) {
-	transform: translateX($transalteX);
+  transform: translateX($transalteX);
 
-	@media (min-width: screens.$phones-small-tablets) {
-		transform: translateX(0);
-	}
+  @media (min-width: screens.$phones-small-tablets) {
+    transform: translateX(0);
+  }
 }
 
 // Header Styles ------------------------------------------------------------------------ //
+
+@mixin languageButtonWidth($width) {
+  width: $width;
+
+  @media (min-width: screens.$phones-small-tablets) {
+    width: 30%;
+  }
+}

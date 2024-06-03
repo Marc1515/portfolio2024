@@ -58,9 +58,11 @@ export const HeaderComponent = ({ translations }: HeaderTypes) => {
 
   return (
     <>
+      <div className="burguerButton">
+        <LanguageButton show={showLanguageButton} />
+      </div>
       {windowWidth < 767 && (
         <div className="burguerButton">
-          <LanguageButton show={showLanguageButton} />
           <BurguerButtonComponent />
         </div>
       )}

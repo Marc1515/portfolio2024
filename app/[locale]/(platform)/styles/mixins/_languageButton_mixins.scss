@@ -1,0 +1,11 @@
+@use "./../variables/screens";
+
+@mixin flexLanguageButton($flex, $justify) {
+  display: $flex;
+  justify-content: $justify;
+
+  @media (min-width: screens.$phones-small-tablets) {
+    display: flex;
+    justify-content: center;
+  }
+}

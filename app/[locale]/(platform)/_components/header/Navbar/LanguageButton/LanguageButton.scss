@@ -1,7 +1,9 @@
+@use "./../../../../styles/mixins/mixins";
 @use "./../../../../styles/variables/variables";
 
 .container {
   position: relative;
+  @include mixins.flexLanguageButton(flex, start);
   padding: 0;
   margin: 0rem;
   z-index: 4;

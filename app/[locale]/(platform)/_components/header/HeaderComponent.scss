@@ -7,7 +7,8 @@
   padding-left: 1rem;
   padding-right: 1rem;
   justify-content: end;
-  width: 100%;
+
+  @include mixins.languageButtonWidth(100%);
   z-index: 10;
 }
 
