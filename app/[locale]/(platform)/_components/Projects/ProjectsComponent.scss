@@ -1,91 +1,95 @@
-@use './../../styles/mixins/mixins';
-@use './../../styles/variables/variables';
+@use "./../../styles/mixins/mixins";
+@use "./../../styles/variables/variables";
 
 .projectsSection {
-	height: 100%;
-	width: 100%;
-	background-color: variables.$quaternary-background-color;
+  height: 100%;
+  width: 100%;
+  background-color: variables.$quaternary-background-color;
 
-	.projectsSectionWrapper {
-		max-width: 1000px;
-		margin: 0 auto;
+  .projectsSectionWrapper {
+    max-width: 1000px;
+    margin: 0 auto;
 
-		.projectsTittleContainer {
-			padding-top: 3rem;
-		}
+    .projectsTittleContainer {
+      padding-top: 3rem;
+    }
 
-		.projectsTextContainer {
-			padding: 5rem 0;
-			width: 100%;
+    .projectsTextContainer {
+      padding: 5rem 0;
+      width: 100%;
 
-			.projectsTextContainer__Text {
-				font-size: 1.2rem;
-			}
-		}
+      .projectsTextContainer__Text {
+        font-size: 1.2rem;
+      }
+    }
 
-		.projectsCards {
-			display: flex;
-			flex-flow: row wrap;
-			justify-content: space-around;
-			gap: 2rem;
-			width: 100%;
+    .projectsCards {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      gap: 2rem;
+      width: 100%;
 
-			.projectsCards__Card {
-				display: flex;
-				flex-flow: column nowrap;
-				justify-content: space-between;
-				gap: 2rem;
-				@include mixins.widthProjectCard(100%);
-				@include mixins.paddingProjectsCard(2.5rem);
-				@include mixins.neomorphismBoxStyle();
+      .projectsCards__Card {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        gap: 2rem;
+        @include mixins.widthProjectCard(100%);
+        @include mixins.paddingProjectsCard(2.5rem);
+        @include mixins.neomorphismBoxStyle();
 
-				a {
-					width: 100%;
-					img {
-						height: 15rem;
-					}
-				}
+        a {
+          width: 100%;
+          img {
+            height: 15rem;
+          }
+        }
 
-				.projectsCards__Links {
-					display: flex;
-					flex-flow: row nowrap;
-					justify-content: center;
-					align-items: center;
+        .projectsCards__Links {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
 
-					a {
-						width: 100%;
-						font-size: 2.5rem;
-						transition: 0.3s ease-out;
+          a {
+            width: 100%;
+            font-size: 2.5rem;
+            transition: 0.3s ease-out;
 
-						&:hover {
-							transform: scale(1.2);
-						}
-					}
-				}
-				.projectsCards__Name {
-					@include mixins.fontSizeTitleProjectCard(1.5rem);
-					text-align: center;
-				}
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+        .projectsCards__Name {
+          @include mixins.fontSizeTitleProjectCard(1.5rem);
+          text-align: center;
+        }
 
-				.projectsCards__TechImg {
-					display: flex;
-					flex-flow: row nowrap;
-					justify-content: space-between;
-					align-items: center;
-					width: 100%;
+        .projectsCards__TechImg {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
 
-					img {
-						@include mixins.projectTechImgWidth(2.5rem);
-					}
-				}
-			}
-		}
+          img {
+            @include mixins.projectTechImgWidth(2.5rem);
+          }
+        }
+      }
+    }
 
-		.pagination {
-			display: flex;
-			justify-content: center;
-			padding-top: 2.5rem;
-			margin: 0 auto;
-		}
-	}
+    .pagination {
+      display: flex;
+      justify-content: center;
+      padding-top: 2.5rem;
+      margin: 0 auto;
+
+      button {
+        color: #fff;
+      }
+    }
+  }
 }
