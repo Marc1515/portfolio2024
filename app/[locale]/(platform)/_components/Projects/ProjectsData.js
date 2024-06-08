@@ -70,7 +70,7 @@ const PortfolioQuestions = [
 		id: 5,
 		nombre: 'Trailers App',
 		githubURL: 'https://github.com/Marc1515/movieapp-youtube',
-		pageURL: 'https://trailers.marcespana.com',
+		pageURL: 'https://trailer.marcespana.com',
 		img: trailersAppImg,
 		techBuild: {
 			htmlSVG: htmlSvgIMG,
@@ -83,7 +83,7 @@ const PortfolioQuestions = [
 		id: 6,
 		nombre: 'Weather App',
 		githubURL: 'https://github.com/Marc1515/openweather',
-		pageURL: 'https://theweather.marcespana.com',
+		pageURL: 'https://weather.marcespana.com',
 		img: weatherAppImg,
 		techBuild: {
 			htmlSVG: htmlSvgIMG,
