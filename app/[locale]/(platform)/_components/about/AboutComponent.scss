@@ -1,82 +1,82 @@
-@use './../../styles/mixins/mixins';
-@use './../../styles/variables/variables';
+@use "./../../styles/mixins/mixins";
+@use "./../../styles/variables/variables";
 
 .aboutSection {
-	height: 100vh;
-	width: 100%;
-	background: variables.$secondary-background-color;
+  height: 100vh;
+  width: 100%;
+  background: variables.$quaternary-background-color;
 
-	.aboutSectionWrapper {
-		display: flex;
-		flex-flow: column nowrap;
-		justify-content: start;
-		height: 100%;
-		max-width: 1000px;
-		margin: 0 auto;
-		@include mixins.gapAboutSectionWrapper(4rem);
-		.aboutTittleContainer {
-			@include mixins.paddingTopTitleAbout(3rem);
-		}
+  .aboutSectionWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    @include mixins.gapAboutSectionWrapper(4rem);
+    .aboutTittleContainer {
+      @include mixins.paddingTopTitleAbout(3rem);
+    }
 
-		.aboutContentWrapper {
-			@include mixins.flexAboutContentWrapper(
-				flex,
-				column,
-				nowrap,
-				space-between
-			);
+    .aboutContentWrapper {
+      @include mixins.flexAboutContentWrapper(
+        flex,
+        column,
+        nowrap,
+        space-between
+      );
 
-			width: 100%;
-			height: 100%;
+      width: 100%;
+      height: 100%;
 
-			.textContainer {
-				display: flex;
-				flex-flow: column nowrap;
-				justify-content: start;
-				align-items: flex-start;
-				@include mixins.maxWidthTextContainer(400px);
-				gap: 4rem;
+      .textContainer {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: start;
+        align-items: flex-start;
+        @include mixins.maxWidthTextContainer(400px);
+        gap: 4rem;
 
-				.textContainer__Text1 {
-					@include mixins.fontSizeText(1rem);
-				}
-				.textContainer__Text2 {
-					@include mixins.fontSizeText(1rem);
-				}
-			}
+        .textContainer__Text1 {
+          @include mixins.fontSizeText(1rem);
+        }
+        .textContainer__Text2 {
+          @include mixins.fontSizeText(1rem);
+        }
+      }
 
-			.socialMediaIconsContainer {
-				@include mixins.flexSocialMediaIconsContainer(
-					flex,
-					row,
-					nowrap,
-					space-between
-				);
+      .socialMediaIconsContainer {
+        @include mixins.flexSocialMediaIconsContainer(
+          flex,
+          row,
+          nowrap,
+          space-between
+        );
 
-				@include mixins.paddingSocialMediaIcons(1rem, 0);
+        @include mixins.paddingSocialMediaIcons(1rem, 0);
 
-				.socialMediaIconsContainer__icon {
-					display: flex;
-					@include mixins.sizeSocialMediaIcons(1.2rem);
-					background-color: transparent;
-					transition: 0.3s ease-out;
+        .socialMediaIconsContainer__icon {
+          display: flex;
+          @include mixins.sizeSocialMediaIcons(1.2rem);
+          background-color: transparent;
+          transition: 0.3s ease-out;
 
-					&:nth-child(1):hover {
-						color: #181717;
-						transform: scale(1.05) translateY(-3px);
-					}
+          &:nth-child(1):hover {
+            color: #181717;
+            transform: scale(1.05) translateY(-3px);
+          }
 
-					&:nth-child(2):hover {
-						color: #e4405f;
-						transform: scale(1.05) translateY(-3px);
-					}
+          &:nth-child(2):hover {
+            color: #e4405f;
+            transform: scale(1.05) translateY(-3px);
+          }
 
-					&:nth-child(3):hover {
-						color: #0a66c2;
-						transform: scale(1.05) translateY(-3px);
-					}
-				}
-			}
-		}
-	}
+          &:nth-child(3):hover {
+            color: #0a66c2;
+            transform: scale(1.05) translateY(-3px);
+          }
+        }
+      }
+    }
+  }
 }

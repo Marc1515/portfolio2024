@@ -18,7 +18,7 @@ export const AboutComponent = ({ translations }: AboutTypes) => {
 
   return (
     <>
-      <div className="spacer layer1"></div>
+      <div className="spacer layer3"></div>
       <section id="about" className="aboutSection">
         <div className="aboutSectionWrapper">
           <div className="aboutTittleContainer">

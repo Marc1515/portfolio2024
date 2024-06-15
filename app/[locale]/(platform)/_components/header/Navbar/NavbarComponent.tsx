@@ -79,16 +79,20 @@ export const NavbarComponent = ({ translations }: NavbarTypes) => {
             Marc<span className="navbar__underline"></span>
           </Link>
         </li>
+
         <li className="navbar__item">
           <Link
-            href="#about"
+            href="#projects"
             onClick={handleClick}
-            className={`navbar__link ${activeLink === "about" ? "active" : ""}`}
+            className={`navbar__link ${
+              activeLink === "projects" ? "active" : ""
+            }`}
           >
-            {about_title}
+            {projects_title}
             <span className="navbar__underline"></span>
           </Link>
         </li>
+
         <li className="navbar__item">
           <Link
             href="#technologies"
@@ -103,16 +107,15 @@ export const NavbarComponent = ({ translations }: NavbarTypes) => {
         </li>
         <li className="navbar__item">
           <Link
-            href="#projects"
+            href="#about"
             onClick={handleClick}
-            className={`navbar__link ${
-              activeLink === "projects" ? "active" : ""
-            }`}
+            className={`navbar__link ${activeLink === "about" ? "active" : ""}`}
           >
-            {projects_title}
+            {about_title}
             <span className="navbar__underline"></span>
           </Link>
         </li>
+
         <li className="navbar__item">
           <Link
             href="#contact"

@@ -39,7 +39,7 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
 
   return (
     <>
-      <div className="spacer layer3"></div>
+      <div className="spacer layer1"></div>
       <section id="projects" className="projectsSection">
         <div className="projectsSectionWrapper">
           <div className="projectsTittleContainer" ref={cardsWrapperRef}>
