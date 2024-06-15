@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { MenuProvider } from "./context/MenuContext";
 import TranslationsProvider from "./context/TranslationsProvider";
 import initTranslations from "@/app/i18n";
@@ -10,16 +11,22 @@ import { ContactComponent } from "./_components/Contact/ContactComponent";
 import "./styles/styles.scss";
 import ScrollTopButtonComponent from "./_components/ScrollTopButton/ScrollTopButtonComponent";
 
-interface HomePageProps {
+interface LayoutProps {
+  children: ReactNode;
   params: {
     locale: string;
+    platform: string;
   };
 }
 
 const i18nNamespaces = ["default"];
 
-const HomePage = async ({ params: { locale } }: HomePageProps) => {
+export default async function Layout({
+  children,
+  params: { locale, platform },
+}: LayoutProps) {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
+
   const HeaderTranslations = {
     about_title: t("about_title") || "",
     technologies_title: t("technologies_title") || "",
@@ -27,17 +34,20 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
     contact_title: t("contact_title") || "",
     // Añadir más traducciones aquí según sea necesario
   };
+
   const MarcSectionTranslations = {
     writer_text: t("writer_text") || "Default Text",
     cv_text: t("cv_text") || "Download CV",
     // Añadir más traducciones aquí según sea necesario
   };
+
   const AboutTranslations = {
     about_title: t("about_title") || "",
     first_text: t("first_text") || "",
     second_text: t("second_text") || "",
     // Añadir más traducciones aquí según sea necesario
   };
+
   const TechnologiesTranslations = {
     technologies_title: t("technologies_title") || "",
     technologies_intro: t("technologies_intro") || "",
@@ -59,11 +69,13 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
       t("technologies_wordpressWoocommerce_explanation") || "",
     // Añadir más traducciones aquí según sea necesario
   };
+
   const ProjectsTranslations = {
     projects_title: t("projects_title") || "",
     projects_intro: t("projects_intro") || "",
     // Añadir más traducciones aquí según sea necesario
   };
+
   const ContactTranslations = {
     contact_title: t("contact_title") || "",
     contact_intro: t("contact_intro") || "",
@@ -82,23 +94,29 @@ const HomePage = async ({ params: { locale } }: HomePageProps) => {
           <HeaderComponent translations={HeaderTranslations} />
           <ScrollTopButtonComponent />
           <MarcSection translations={MarcSectionTranslations} />
-          <AboutComponent translations={AboutTranslations} />
-          <TechnologiesComponent translations={TechnologiesTranslations} />
           <ProjectsComponent translations={ProjectsTranslations} />
+          <TechnologiesComponent translations={TechnologiesTranslations} />
+          <AboutComponent translations={AboutTranslations} />
           <ContactComponent translations={ContactTranslations} />
+          {children}
         </main>
       </MenuProvider>
     </TranslationsProvider>
   );
-};
-
-export async function generateStaticParams() {
-  // Suponiendo que tus locales soportados son 'en' y 'es'
-  const locales = ["en", "es", "ca"];
-
-  return locales.map((locale) => ({
-    locale,
-  }));
 }
 
-export default HomePage;
+// Aquí es donde se define generateStaticParams
+export async function generateStaticParams() {
+  const locales: string[] = ["en", "es", "ca"];
+  const platforms: string[] = ["web", "mobile"]; // Ajusta según las plataformas soportadas
+
+  const params: { locale: string; platform: string }[] = [];
+
+  locales.forEach((locale) => {
+    platforms.forEach((platform) => {
+      params.push({ locale, platform });
+    });
+  });
+
+  return params;
+}
