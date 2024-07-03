@@ -57,7 +57,7 @@ const PortfolioQuestions = [
 		id: 4,
 		nombre: 'Learn English App',
 		githubURL: 'https://github.com/Marc1515/learn-english',
-		pageURL: 'https://learning.marcespana.com',
+		pageURL: 'https://learn.marcespana.com',
 		img: learrnAppImg,
 		techBuild: {
 			htmlSVG: htmlSvgIMG,
