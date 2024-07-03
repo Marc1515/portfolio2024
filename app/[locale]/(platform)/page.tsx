@@ -1,7 +1,7 @@
 import React from "react";
 
 const PlatformPage = () => {
-  return <div>Page</div>;
+  return;
 };
 
 export default PlatformPage;
