@@ -29,7 +29,7 @@ const PortfolioQuestions = [
 	},
 	{
 		id: 2,
-		nombre: 'Countries App',
+		nombre: 'Country App',
 		githubURL: 'https://github.com/Marc1515/CountriesApp',
 		pageURL: 'https://countries.marcespana.com/',
 		img: countriesApp,
