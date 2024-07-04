@@ -57,20 +57,22 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
           <div className="projectsCards">
             {displayedImages.map((item) => (
               <div key={item.id} className="projectsCards__Card">
-                <a href={item.pageURL} target="_blank" rel="noreferrer">
-                  <Image src={item.img} alt="" />
-                </a>
+                <Image src={item.img} alt="" />
 
-                <div className="projectsCards__Links">
-                  <a href={item.githubURL} target="_blank" rel="noreferrer">
-                    <AiFillGithub />
-                  </a>
-                  <a href={item.pageURL} target="_blank" rel="noreferrer">
-                    <AiOutlineLink />
-                  </a>
-                </div>
-                <span className="projectsCards__Name">{item.nombre}</span>
-                <div className="projectsCards__TechImg">
+                <div className="projectsCards__Sheet">
+                  <div className="projectsCards__NameContainer">
+                    <span className="projectsCards__Name">{item.nombre}</span>
+                  </div>
+                  <div className="projectsCards__Links">
+                    <a href={item.githubURL} target="_blank" rel="noreferrer">
+                      <AiFillGithub />
+                    </a>
+                    <a href={item.pageURL} target="_blank" rel="noreferrer">
+                      <AiOutlineLink />
+                    </a>
+                  </div>
+
+                  {/*                 <div className="projectsCards__TechImg">
                   {item.techBuild.htmlSVG && (
                     <Image src={item.techBuild.htmlSVG} alt="HTML" />
                   )}
@@ -98,6 +100,7 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
                   {item.techBuild.nextSVG && (
                     <Image src={item.techBuild.nextSVG} alt="Next.js" />
                   )}
+                </div> */}
                 </div>
               </div>
             ))}
