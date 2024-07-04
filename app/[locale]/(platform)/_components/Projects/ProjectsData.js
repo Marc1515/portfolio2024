@@ -55,7 +55,7 @@ const PortfolioQuestions = [
 	},
 	{
 		id: 4,
-		nombre: 'Learn English App',
+		nombre: 'Learn App',
 		githubURL: 'https://github.com/Marc1515/learn-english',
 		pageURL: 'https://learn.marcespana.com',
 		img: learrnAppImg,
