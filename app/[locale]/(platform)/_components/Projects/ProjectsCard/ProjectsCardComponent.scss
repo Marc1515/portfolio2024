@@ -2,7 +2,7 @@
 
 .projectsCards__Card {
   position: relative;
-  perspective: 1000px;
+  /* perspective: 1000px; */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -12,7 +12,7 @@
   gap: 2rem;
   @include mixins.widthProjectCard(100%);
   @include mixins.paddingProjectsCard(0);
-  @include mixins.neomorphismBoxStyle();
+  /* @include mixins.neomorphismBoxStyle(); */
 
   &.flipped {
     img {
@@ -53,18 +53,18 @@
       backdrop-filter: blur(3px);
       border-radius: 15px 15px 0 0;
       top: 0;
-      height: 20%;
+      height: 15%;
       width: 100%;
 
       Button {
         margin-right: 1rem;
-        padding: 0 1rem;
-        height: 3rem;
+        padding: 0.5rem;
+        height: 2.5rem;
         background-color: transparent;
         border: 1px #fff solid;
 
         &:first-child {
-          font-size: xx-large;
+          font-size: x-large;
         }
       }
     }
@@ -83,7 +83,7 @@
       transform: rotateY(0deg);
 
       .projectsCards__NameContainer {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
 
         .projectsCards__Name {
           font-size: xx-large;
@@ -96,7 +96,7 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         width: 100%;
 
         a {
