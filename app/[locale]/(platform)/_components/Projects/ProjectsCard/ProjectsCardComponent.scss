@@ -2,26 +2,18 @@
 
 .projectsCards__Card {
   position: relative;
-  /* perspective: 1000px; */
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   color: #fff;
   height: 100%;
-  gap: 2rem;
   @include mixins.widthProjectCard(100%);
   @include mixins.paddingProjectsCard(0);
-  /* @include mixins.neomorphismBoxStyle(); */
 
   &.flipped {
-    img {
-      transform: rotateY(180deg);
-    }
-
-    .inner {
-      transform: rotateY(180deg);
-    }
+    border-radius: 15px;
+    transition: transform 0.6s;
   }
 
   .projectsCards_ImageWrapper {
@@ -30,13 +22,11 @@
       height: 32rem;
       border-radius: 15px;
       transition: transform 0.6s;
-      transform-style: preserve-3d;
     }
   }
 
   .inner {
     transition: transform 0.6s;
-    transform-style: preserve-3d;
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -53,6 +43,7 @@
       backdrop-filter: blur(3px);
       border-radius: 15px 15px 0 0;
       top: 0;
+      z-index: 9999;
       height: 15%;
       width: 100%;
 
@@ -79,14 +70,34 @@
       backdrop-filter: blur(3px);
       height: 25%;
       width: 100%;
-      backface-visibility: hidden;
-      transform: rotateY(0deg);
+      overflow: hidden;
+
+      &.expanded {
+        height: 100%;
+      }
 
       .projectsCards__NameContainer {
         margin-bottom: 0.5rem;
 
         .projectsCards__Name {
           font-size: xx-large;
+        }
+      }
+
+      &.fadeOut {
+        .projectsCards__NameContainer {
+          animation: fadeOut 0.3s 0.3s forwards;
+        }
+        animation: expandHeight 0.5s 1s forwards;
+        .projectsCards__Links {
+          a {
+            &:nth-child(1) {
+              animation: fadeOut 0.3s 0.5s forwards;
+            }
+            &:nth-child(2) {
+              animation: fadeOut 0.3s 0.7s forwards;
+            }
+          }
         }
       }
 
@@ -146,5 +157,25 @@
       height: 15%;
       width: 100%;
     }
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes expandHeight {
+  from {
+    height: 25%;
+  }
+  to {
+    height: 100%;
+    border-radius: 15px;
   }
 }
