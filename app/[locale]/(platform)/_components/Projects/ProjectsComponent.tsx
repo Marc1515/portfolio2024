@@ -3,13 +3,12 @@
 import { useState, useRef } from "react";
 import "./ProjectsComponent.scss";
 import images from "./ProjectsData";
-import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { useScrollReveal } from "../../hooks/useRevealHooks";
-import Image from "next/image";
 import { ProjectsTypes } from "./Types";
+import { ProjectsCardComponent } from "./ProjectsCard/ProjectsCardComponent";
+import { SwitchButtonProvider } from "../../context/SwitchButtonContext";
 
 export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
   const { projects_title, projects_intro } = translations;
@@ -38,7 +37,7 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
   );
 
   return (
-    <>
+    <SwitchButtonProvider>
       <div className="spacer layer1"></div>
       <section id="projects" className="projectsSection">
         <div className="projectsSectionWrapper">
@@ -56,53 +55,7 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
 
           <div className="projectsCards">
             {displayedImages.map((item) => (
-              <div key={item.id} className="projectsCards__Card">
-                <Image src={item.img} alt="" />
-
-                <div className="projectsCards__Sheet">
-                  <div className="projectsCards__NameContainer">
-                    <span className="projectsCards__Name">{item.nombre}</span>
-                  </div>
-                  <div className="projectsCards__Links">
-                    <a href={item.githubURL} target="_blank" rel="noreferrer">
-                      <AiFillGithub />
-                    </a>
-                    <a href={item.pageURL} target="_blank" rel="noreferrer">
-                      <AiOutlineLink />
-                    </a>
-                  </div>
-
-                  {/*                 <div className="projectsCards__TechImg">
-                  {item.techBuild.htmlSVG && (
-                    <Image src={item.techBuild.htmlSVG} alt="HTML" />
-                  )}
-                  {item.techBuild.cssSVG && (
-                    <Image src={item.techBuild.cssSVG} alt="CSS" />
-                  )}
-                  {item.techBuild.javaScriptSvg && (
-                    <Image
-                      src={item.techBuild.javaScriptSvg}
-                      alt="JavaScript"
-                    />
-                  )}
-                  {item.techBuild.typeScriptSvg && (
-                    <Image
-                      src={item.techBuild.typeScriptSvg}
-                      alt="TypeScript"
-                    />
-                  )}
-                  {item.techBuild.angularSVG && (
-                    <Image src={item.techBuild.angularSVG} alt="Angular" />
-                  )}
-                  {item.techBuild.reactSVG && (
-                    <Image src={item.techBuild.reactSVG} alt="React" />
-                  )}
-                  {item.techBuild.nextSVG && (
-                    <Image src={item.techBuild.nextSVG} alt="Next.js" />
-                  )}
-                </div> */}
-                </div>
-              </div>
+              <ProjectsCardComponent key={item.id} item={item} />
             ))}
           </div>
           <div className="pagination">
@@ -117,6 +70,6 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
           </div>
         </div>
       </section>
-    </>
+    </SwitchButtonProvider>
   );
 };
