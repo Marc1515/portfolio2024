@@ -11,11 +11,6 @@
   @include mixins.widthProjectCard(100%);
   @include mixins.paddingProjectsCard(0);
 
-  &.flipped {
-    border-radius: 15px;
-    transition: transform 0.6s;
-  }
-
   .projectsCards_ImageWrapper {
     img {
       top: 0;
@@ -38,14 +33,20 @@
       position: absolute;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-between;
       background-color: rgba(20, 66, 114, 0.7);
       backdrop-filter: blur(3px);
       border-radius: 15px 15px 0 0;
       top: 0;
-      z-index: 9999;
+      z-index: 5;
       height: 15%;
       width: 100%;
+
+      .projectCards__SecondName {
+        opacity: 0;
+        margin-left: 1rem;
+        z-index: -5;
+      }
 
       Button {
         margin-right: 1rem;
@@ -71,35 +72,6 @@
       height: 25%;
       width: 100%;
       overflow: hidden;
-
-      &.expanded {
-        height: 100%;
-      }
-
-      .projectsCards__NameContainer {
-        margin-bottom: 0.5rem;
-
-        .projectsCards__Name {
-          font-size: xx-large;
-        }
-      }
-
-      &.fadeOut {
-        .projectsCards__NameContainer {
-          animation: fadeOut 0.3s 0.3s forwards;
-        }
-        animation: expandHeight 0.5s 1s forwards;
-        .projectsCards__Links {
-          a {
-            &:nth-child(1) {
-              animation: fadeOut 0.3s 0.5s forwards;
-            }
-            &:nth-child(2) {
-              animation: fadeOut 0.3s 0.7s forwards;
-            }
-          }
-        }
-      }
 
       .projectsCards__Links {
         display: flex;
@@ -160,6 +132,31 @@
   }
 }
 
+.projectsCards__Card.expanded {
+  .projectCards__SecondName {
+    animation: fadeIn 0.5s 1.5s forwards;
+  }
+
+  .projectsCards__SecondSheet {
+    animation: expandHeight 0.5s 1s forwards;
+
+    .projectsCards__NameContainer {
+      animation: fadeOut 0.3s 0.3s forwards;
+    }
+
+    .projectsCards__Links {
+      a {
+        &:nth-child(1) {
+          animation: fadeOut 0.3s 0.5s forwards;
+        }
+        &:nth-child(2) {
+          animation: fadeOut 0.3s 0.7s forwards;
+        }
+      }
+    }
+  }
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -167,6 +164,16 @@
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    z-index: 5;
+    opacity: 1;
   }
 }
 
