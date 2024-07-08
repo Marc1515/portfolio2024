@@ -9,6 +9,7 @@ type ProjectsCardProps = {
   item: {
     id: number;
     img: StaticImageData;
+    projectText: string;
     nombre: string;
     githubURL: string;
     pageURL: string;
@@ -32,12 +33,7 @@ export const ProjectsCardComponent = ({ item }: ProjectsCardProps) => {
 
         <div className="projectsCards__SecondSheet">
           <div className="projectsCards__TextContainer">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Necessitatibus, vitae voluptates corrupti ipsum est repudiandae
-              officia alias veritatis eligendi officiis quo aut eum nostrum illo
-              sequi quibusdam ab. Illum, inventore.
-            </p>
+            <p>{item.projectText}</p>
           </div>
           <div className="projectsCards__NameContainer">
             <span className="projectsCards__Name">{item.nombre}</span>

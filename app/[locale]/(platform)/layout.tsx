@@ -73,7 +73,12 @@ export default async function Layout({
   const ProjectsTranslations = {
     projects_title: t("projects_title") || "",
     projects_intro: t("projects_intro") || "",
-    // Añadir más traducciones aquí según sea necesario
+    projects_trello_text: t("projects_trello_text"),
+    projects_country_text: t("projects_country_text"),
+    projects_gifs_text: t("projects_gifs_text"),
+    projects_learn_text: t("projects_learn_text"),
+    projects_trailers_text: t("projects_trailers_text"),
+    projects_weather_text: t("projects_weather_text"),
   };
 
   const ContactTranslations = {

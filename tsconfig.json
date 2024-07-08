@@ -31,6 +31,6 @@
     "declaration.d.ts",
     "app/[locale]/(platform)/_components/Header/Navbar/NavbarComponent.tsx",
     "app/[locale]/(platform)/_components/Header/LanguageChanger.js"
-  ],
+, "app/[locale]/(platform)/_components/Projects/ProjectsData.js"  ],
   "exclude": ["node_modules"]
 }

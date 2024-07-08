@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./ProjectsComponent.scss";
-import images from "./ProjectsData";
+import { getPortfolioQuestions } from "./ProjectsData";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { useScrollReveal } from "../../hooks/useRevealHooks";
-import { ProjectsTypes } from "./Types";
+import { ProjectsTypes, Project } from "./Types";
 import { ProjectsCardComponent } from "./ProjectsCard/ProjectsCardComponent";
 import { SwitchButtonProvider } from "../../context/SwitchButtonContext";
 
@@ -14,11 +14,22 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
   const { projects_title, projects_intro } = translations;
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [projects, setProjects] = useState<Project[]>([]);
   const imagesPerPage = 4;
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const locale = "es"; // Aquí puedes obtener el locale dinámicamente si es necesario
+      const projectsData = await getPortfolioQuestions(locale);
+      setProjects(projectsData);
+    };
+
+    fetchProjects();
+  }, []);
 
   const startIndex = (currentPage - 1) * imagesPerPage;
   const endIndex = startIndex + imagesPerPage;
-  const displayedImages = images.slice(startIndex, endIndex);
+  const displayedImages = projects.slice(startIndex, endIndex);
 
   const cardsWrapperRef = useRef<HTMLDivElement>(null);
 
@@ -61,7 +72,7 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
           <div className="pagination">
             <Stack spacing={2}>
               <Pagination
-                count={Math.ceil(images.length / imagesPerPage)}
+                count={Math.ceil(projects.length / imagesPerPage)}
                 color="secondary"
                 page={currentPage}
                 onChange={handlePageChange}
