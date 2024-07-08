@@ -72,6 +72,13 @@
       height: 25%;
       width: 100%;
       overflow: hidden;
+      .projectsCards__TextContainer {
+        p {
+          padding: 0 1rem;
+          opacity: 0;
+          height: 0;
+        }
+      }
 
       .projectsCards__Links {
         display: flex;
@@ -140,6 +147,12 @@
   .projectsCards__SecondSheet {
     animation: expandHeight 0.5s 1s forwards;
 
+    .projectsCards__TextContainer {
+      p {
+        animation: fadeIn2 1s 1.5s forwards;
+      }
+    }
+
     .projectsCards__NameContainer {
       animation: fadeOut 0.3s 0.3s forwards;
     }
@@ -173,6 +186,18 @@
   }
   to {
     z-index: 5;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    z-index: 5;
+    height: 100%;
     opacity: 1;
   }
 }

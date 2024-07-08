@@ -31,6 +31,14 @@ export const ProjectsCardComponent = ({ item }: ProjectsCardProps) => {
         </div>
 
         <div className="projectsCards__SecondSheet">
+          <div className="projectsCards__TextContainer">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Necessitatibus, vitae voluptates corrupti ipsum est repudiandae
+              officia alias veritatis eligendi officiis quo aut eum nostrum illo
+              sequi quibusdam ab. Illum, inventore.
+            </p>
+          </div>
           <div className="projectsCards__NameContainer">
             <span className="projectsCards__Name">{item.nombre}</span>
           </div>
