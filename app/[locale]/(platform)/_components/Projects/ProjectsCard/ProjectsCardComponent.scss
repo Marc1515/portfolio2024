@@ -38,14 +38,13 @@
       backdrop-filter: blur(3px);
       border-radius: 15px 15px 0 0;
       top: 0;
-      z-index: 5;
+
       height: 15%;
       width: 100%;
 
       .projectCards__SecondName {
         opacity: 0;
         margin-left: 1rem;
-        z-index: -5;
       }
 
       Button {
