@@ -9,7 +9,9 @@ type ProjectsCardProps = {
   item: {
     id: number;
     img: StaticImageData;
-    projectText: string;
+    projectText1: string;
+    projectText2: string;
+    projectText3?: string;
     nombre: string;
     githubURL: string;
     pageURL: string;
@@ -33,7 +35,9 @@ export const ProjectsCardComponent = ({ item }: ProjectsCardProps) => {
 
         <div className="projectsCards__SecondSheet">
           <div className="projectsCards__TextContainer">
-            <p>{item.projectText}</p>
+            <p>{item.projectText1}</p>
+            <p>{item.projectText2}</p>
+            <p>{item.projectText3}</p>
           </div>
           <div className="projectsCards__NameContainer">
             <span className="projectsCards__Name">{item.nombre}</span>

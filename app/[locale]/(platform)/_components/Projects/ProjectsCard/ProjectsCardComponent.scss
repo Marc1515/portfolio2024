@@ -73,8 +73,12 @@
       width: 100%;
       overflow: hidden;
       .projectsCards__TextContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         p {
           padding: 0 1rem;
+          padding-top: 0.5rem;
           opacity: 0;
           height: 0;
         }

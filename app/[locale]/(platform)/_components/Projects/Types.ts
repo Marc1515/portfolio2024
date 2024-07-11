@@ -14,7 +14,9 @@ export interface Project {
   githubURL: string;
   pageURL: string;
   img: any; // Cambiar StaticImageData a any
-  projectText: string;
+  projectText1: string;
+  projectText2: string;
+  projectText3?: string;
   techBuild: TechBuild;
 }
 
