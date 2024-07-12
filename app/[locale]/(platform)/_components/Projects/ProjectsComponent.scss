@@ -48,3 +48,13 @@
     }
   }
 }
+
+@media (min-width: 965px) {
+  .projectsSection .projectsSectionWrapper .projectsCards {
+    flex-flow: row wrap;
+  }
+
+  .projectsCards_ImageWrapper {
+    width: 100%;
+  }
+}
