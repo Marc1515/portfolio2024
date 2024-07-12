@@ -26,7 +26,7 @@ export const ProjectsCardComponent = ({ item }: ProjectsCardProps) => {
   return (
     <div className={`projectsCards__Card ${isFlipped ? "expanded" : ""}`}>
       <div className="projectsCards_ImageWrapper">
-        <Image src={item.img} alt={item.nombre} />
+        <Image src={item.img} alt={item.nombre} className="svg-image" />
       </div>
       <div className="inner">
         <div className="projectsCards__FirstSheet">
@@ -55,25 +55,53 @@ export const ProjectsCardComponent = ({ item }: ProjectsCardProps) => {
         <div className="projectsCards__ThirdSheet">
           <div className="projectsCards__TechImg">
             {item.techBuild.htmlSVG && (
-              <Image src={item.techBuild.htmlSVG} alt="HTML" />
+              <Image
+                src={item.techBuild.htmlSVG}
+                alt="HTML"
+                className="svg-image"
+              />
             )}
             {item.techBuild.cssSVG && (
-              <Image src={item.techBuild.cssSVG} alt="CSS" />
+              <Image
+                src={item.techBuild.cssSVG}
+                alt="CSS"
+                className="svg-image"
+              />
             )}
             {item.techBuild.javaScriptSvg && (
-              <Image src={item.techBuild.javaScriptSvg} alt="JavaScript" />
+              <Image
+                src={item.techBuild.javaScriptSvg}
+                alt="JavaScript"
+                className="svg-image"
+              />
             )}
             {item.techBuild.typeScriptSvg && (
-              <Image src={item.techBuild.typeScriptSvg} alt="TypeScript" />
+              <Image
+                src={item.techBuild.typeScriptSvg}
+                alt="TypeScript"
+                className="svg-image"
+              />
             )}
             {item.techBuild.angularSVG && (
-              <Image src={item.techBuild.angularSVG} alt="Angular" />
+              <Image
+                src={item.techBuild.angularSVG}
+                alt="Angular"
+                className="svg-image"
+              />
             )}
             {item.techBuild.reactSVG && (
-              <Image src={item.techBuild.reactSVG} alt="React" />
+              <Image
+                src={item.techBuild.reactSVG}
+                alt="React"
+                className="svg-image"
+              />
             )}
             {item.techBuild.nextSVG && (
-              <Image src={item.techBuild.nextSVG} alt="Next.js" />
+              <Image
+                src={item.techBuild.nextSVG}
+                alt="Next.js"
+                className="svg-image"
+              />
             )}
           </div>
         </div>

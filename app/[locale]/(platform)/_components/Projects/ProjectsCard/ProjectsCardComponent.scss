@@ -16,12 +16,10 @@
       top: 0;
       height: 32rem;
       border-radius: 15px;
-      transition: transform 0.6s;
     }
   }
 
   .inner {
-    transition: transform 0.6s;
     position: absolute;
     display: flex;
     align-items: center;
@@ -113,21 +111,6 @@
         @include mixins.fontSizeTitleProjectCard(1.5rem);
         text-align: center;
       }
-
-      .projectsCards__TechImg {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        bottom: 1rem;
-        top: 0;
-
-        img {
-          height: 2rem;
-          @include mixins.projectTechImgWidth(2.5rem);
-        }
-      }
     }
 
     .projectsCards__ThirdSheet {
@@ -143,15 +126,13 @@
       width: 100%;
 
       .projectsCards__TechImg {
-        position: relative;
         display: flex;
         justify-content: space-around;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        &:only-child {
-          height: 80%;
-          width: 80%;
+        img {
+          width: 18%;
+          height: 18%;
+          object-fit: contain;
+          visibility: hidden;
         }
       }
     }
@@ -189,8 +170,8 @@
   }
 
   .projectsCards__ThirdSheet {
-    .projectsCards__TechImg {
-      animation: revealTech 0.5s 1.8s forwards;
+    .projectsCards__TechImg img {
+      animation: revealTech 0.3s 2s forwards;
     }
   }
 }
@@ -236,12 +217,17 @@
 }
 
 @keyframes revealTech {
-  from {
+  0% {
     opacity: 0;
     transform: translateX(-100%);
+    visibility: hidden;
   }
-  to {
+  1% {
+    visibility: visible;
+  }
+  100% {
     opacity: 1;
     transform: translateX(0);
+    visibility: visible;
   }
 }
