@@ -17,6 +17,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@types/react-fontawesome": "^1.6.8",
     "class-variance-authority": "^0.7.0",
+    "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "i18next": "^23.11.4",
     "i18next-resources-to-backend": "^1.2.1",
