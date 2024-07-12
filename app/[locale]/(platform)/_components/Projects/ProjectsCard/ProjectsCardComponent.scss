@@ -141,15 +141,15 @@
 
 .projectsCards__Card.expanded {
   .projectCards__SecondName {
-    animation: fadeIn 0.5s 1.5s forwards;
+    animation: fadeIn 0.3s 1.1s forwards;
   }
 
   .projectsCards__SecondSheet {
-    animation: expandHeight 0.5s 1s forwards;
+    animation: expandHeight 0.3s 0.9s forwards;
 
     .projectsCards__TextContainer {
       p {
-        animation: fadeIn2 1s 1.5s forwards;
+        animation: fadeIn2 0.3s 1.3s forwards;
       }
     }
 
@@ -171,7 +171,7 @@
 
   .projectsCards__ThirdSheet {
     .projectsCards__TechImg img {
-      animation: revealTech 0.3s 2s forwards;
+      animation: revealTech 0.3s 1.5s forwards;
     }
   }
 }
