@@ -21,8 +21,8 @@ type ProjectsCardProps = {
 };
 
 export const ProjectsCardComponent = ({ item }: ProjectsCardProps) => {
-  const { flippedIds } = useSwitchButton();
-  const isFlipped = flippedIds.has(item.id);
+  const { flippedId } = useSwitchButton();
+  const isFlipped = flippedId === item.id;
 
   console.log(`Project ID: ${item.id}, isFlipped: ${isFlipped}`);
 

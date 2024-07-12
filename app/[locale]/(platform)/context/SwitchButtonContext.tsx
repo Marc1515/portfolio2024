@@ -3,7 +3,7 @@
 import React, { createContext, useContext, ReactNode, useState } from "react";
 
 type SwitchButtonContextType = {
-  flippedIds: Set<number>;
+  flippedId: number | null;
   toggleFlip: (id: number) => void;
 };
 
@@ -12,24 +12,14 @@ const SwitchButtonContext = createContext<SwitchButtonContextType | undefined>(
 );
 
 export const SwitchButtonProvider = ({ children }: { children: ReactNode }) => {
-  const [flippedIds, setFlippedIds] = useState<Set<number>>(new Set());
+  const [flippedId, setFlippedId] = useState<number | null>(null);
 
   const toggleFlip = (id: number) => {
-    setFlippedIds((prevFlippedIds) => {
-      const newFlippedIds = new Set(prevFlippedIds);
-      if (newFlippedIds.has(id)) {
-        newFlippedIds.delete(id);
-      } else {
-        newFlippedIds.add(id);
-      }
-      console.log(`Toggled ID: ${id}`);
-      console.log(`New Flipped IDs: ${Array.from(newFlippedIds).join(", ")}`);
-      return newFlippedIds;
-    });
+    setFlippedId((prevFlippedId) => (prevFlippedId === id ? null : id));
   };
 
   return (
-    <SwitchButtonContext.Provider value={{ flippedIds, toggleFlip }}>
+    <SwitchButtonContext.Provider value={{ flippedId, toggleFlip }}>
       {children}
     </SwitchButtonContext.Provider>
   );
