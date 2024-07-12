@@ -22,6 +22,8 @@ export const SwitchButtonProvider = ({ children }: { children: ReactNode }) => {
       } else {
         newFlippedIds.add(id);
       }
+      console.log(`Toggled ID: ${id}`);
+      console.log(`New Flipped IDs: ${Array.from(newFlippedIds).join(", ")}`);
       return newFlippedIds;
     });
   };

@@ -3,6 +3,7 @@ import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
 import { StaticImageData } from "next/image";
 import SwitchButtonComponent from "../SwitchButton/SwitchButtonComponent";
 import { useSwitchButton } from "../../../context/SwitchButtonContext";
+import classNames from "classnames";
 import "./ProjectsCardComponent.scss";
 
 type ProjectsCardProps = {
@@ -23,8 +24,15 @@ export const ProjectsCardComponent = ({ item }: ProjectsCardProps) => {
   const { flippedIds } = useSwitchButton();
   const isFlipped = flippedIds.has(item.id);
 
+  console.log(`Project ID: ${item.id}, isFlipped: ${isFlipped}`);
+
+  const cardClasses = classNames("projectsCards__Card", {
+    expanded: isFlipped,
+    collapsed: !isFlipped,
+  });
+
   return (
-    <div className={`projectsCards__Card ${isFlipped ? "expanded" : ""}`}>
+    <div className={cardClasses}>
       <div className="projectsCards_ImageWrapper">
         <Image src={item.img} alt={item.nombre} className="svg-image" />
       </div>

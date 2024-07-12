@@ -14,6 +14,7 @@ const SwitchButtonComponent = ({ id }: SwitchButtonProps) => {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
+    console.log(`Button clicked for ID: ${id}`);
     toggleFlip(id);
   };
 
