@@ -1,3 +1,5 @@
+// Layout.tsx
+
 import { ReactNode } from "react";
 import { MenuProvider } from "./context/MenuContext";
 import TranslationsProvider from "./context/TranslationsProvider";
@@ -99,7 +101,10 @@ export default async function Layout({
           <HeaderComponent translations={HeaderTranslations} />
           <ScrollTopButtonComponent />
           <MarcSection translations={MarcSectionTranslations} />
-          <ProjectsComponent translations={ProjectsTranslations} />
+          <ProjectsComponent
+            translations={ProjectsTranslations}
+            locale={locale}
+          />
           <TechnologiesComponent translations={TechnologiesTranslations} />
           <AboutComponent translations={AboutTranslations} />
           <ContactComponent translations={ContactTranslations} />
