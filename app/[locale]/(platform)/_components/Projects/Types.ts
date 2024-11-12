@@ -1,3 +1,5 @@
+// Types.ts
+
 export interface TechBuild {
   nextSVG?: string;
   htmlSVG?: string;
@@ -13,8 +15,10 @@ export interface Project {
   nombre: string;
   githubURL: string;
   pageURL: string;
-  img: any; // Cambiar StaticImageData a any
-  projectText: string;
+  img: any;
+  projectText1: string;
+  projectText2: string;
+  projectText3?: string;
   techBuild: TechBuild;
 }
 
@@ -22,6 +26,6 @@ export interface ProjectsTypes {
   translations: {
     projects_title: string;
     projects_intro: string;
-    // Añadir más campos de traducción aquí según sea necesario
   };
+  locale?: string; // Añadir locale como una propiedad opcional
 }

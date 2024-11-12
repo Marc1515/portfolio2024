@@ -10,7 +10,14 @@ import { ProjectsTypes, Project } from "./Types";
 import { ProjectsCardComponent } from "./ProjectsCard/ProjectsCardComponent";
 import { SwitchButtonProvider } from "../../context/SwitchButtonContext";
 
-export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
+interface ProjectsComponentProps extends ProjectsTypes {
+  locale: string;
+}
+
+export const ProjectsComponent = ({
+  translations,
+  locale,
+}: ProjectsComponentProps) => {
   const { projects_title, projects_intro } = translations;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,13 +26,12 @@ export const ProjectsComponent = ({ translations }: ProjectsTypes) => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const locale = "es"; // Aquí puedes obtener el locale dinámicamente si es necesario
       const projectsData = await getPortfolioQuestions(locale);
       setProjects(projectsData);
     };
 
     fetchProjects();
-  }, []);
+  }, [locale]);
 
   const startIndex = (currentPage - 1) * imagesPerPage;
   const endIndex = startIndex + imagesPerPage;

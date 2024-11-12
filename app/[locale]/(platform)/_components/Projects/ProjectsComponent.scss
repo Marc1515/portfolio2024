@@ -25,21 +25,36 @@
 
     .projectsCards {
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column nowrap;
       justify-content: space-around;
+      align-items: center;
       gap: 2rem;
       width: 100%;
+    }
 
-      .pagination {
-        display: flex;
+    .pagination {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 2rem;
+
+      .MuiPagination-root {
         justify-content: center;
-        padding-top: 2.5rem;
-        margin: 0 auto;
+      }
 
-        button {
-          color: #fff;
-        }
+      button {
+        color: #fff;
       }
     }
+  }
+}
+
+@media (min-width: 965px) {
+  .projectsSection .projectsSectionWrapper .projectsCards {
+    flex-flow: row wrap;
+  }
+
+  .projectsCards_ImageWrapper {
+    width: 100%;
   }
 }

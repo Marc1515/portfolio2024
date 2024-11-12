@@ -11,20 +11,19 @@
   @include mixins.widthProjectCard(100%);
   @include mixins.paddingProjectsCard(0);
 
+  transition: height 0.3s ease-in-out;
+
   .projectsCards_ImageWrapper {
     img {
       top: 0;
       height: 32rem;
       border-radius: 15px;
-      transition: transform 0.6s;
     }
   }
 
   .inner {
-    transition: transform 0.6s;
     position: absolute;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -38,14 +37,15 @@
       backdrop-filter: blur(3px);
       border-radius: 15px 15px 0 0;
       top: 0;
-      z-index: 5;
+      z-index: 1;
       height: 15%;
       width: 100%;
+      transition: opacity 0.3s ease-in-out;
 
       .projectCards__SecondName {
         opacity: 0;
         margin-left: 1rem;
-        z-index: -5;
+        transition: opacity 0.3s ease-in-out;
       }
 
       Button {
@@ -72,27 +72,49 @@
       height: 25%;
       width: 100%;
       overflow: hidden;
+      transition: height 0.3s ease-in-out 0.6s, opacity 0.3s ease-in-out;
+
       .projectsCards__TextContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+
         p {
+          position: relative;
           padding: 0 1rem;
           opacity: 0;
-          height: 0;
+          transition: opacity 0.3s ease-in-out;
+          word-break: keep-all;
+        }
+      }
+
+      .projectsCards__NameContainer {
+        position: absolute;
+        padding-bottom: 4rem;
+        transition: opacity 0.3s ease-in-out;
+
+        .projectsCards__Name {
+          font-size: 1.5rem;
+          text-align: center;
         }
       }
 
       .projectsCards__Links {
+        position: absolute;
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        margin-top: 0.5rem;
-        width: 100%;
+        padding-top: 3rem;
+        width: 40%;
+        transition: opacity 0.3s ease-in-out;
 
         a {
-          width: 15%;
+          width: 100%;
           font-size: 2.5rem;
-          transition: 0.3s ease-out;
+          transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
 
           &:nth-child(2) {
             border: #fff 1px solid;
@@ -104,110 +126,121 @@
           }
         }
       }
-
-      .projectsCards__Name {
-        @include mixins.fontSizeTitleProjectCard(1.5rem);
-        text-align: center;
-      }
-
-      .projectsCards__TechImg {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        bottom: 1rem;
-        top: 0;
-
-        img {
-          height: 2rem;
-          @include mixins.projectTechImgWidth(2.5rem);
-        }
-      }
     }
 
     .projectsCards__ThirdSheet {
       position: absolute;
       display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: rgba(20, 66, 114, 0.7);
       backdrop-filter: blur(3px);
       border-radius: 0 0 15px 15px;
       bottom: 0;
       height: 15%;
       width: 100%;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+      .projectsCards__TechImg {
+        display: flex;
+        justify-content: space-around;
+        img {
+          width: 18%;
+          height: 18%;
+          object-fit: contain;
+          visibility: hidden;
+          transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out,
+            transform 0.3s ease-in-out;
+        }
+      }
     }
   }
 }
 
 .projectsCards__Card.expanded {
-  .projectCards__SecondName {
-    animation: fadeIn 0.5s 1.5s forwards;
+  .projectsCards__FirstSheet .projectCards__SecondName {
+    opacity: 1;
+    transition-delay: 1.2s;
   }
 
   .projectsCards__SecondSheet {
-    animation: expandHeight 0.5s 1s forwards;
-
+    height: 100%;
+    transition-delay: 0.8s;
     .projectsCards__TextContainer {
       p {
-        animation: fadeIn2 1s 1.5s forwards;
+        opacity: 1;
+        transition-delay: 1s;
       }
     }
 
     .projectsCards__NameContainer {
-      animation: fadeOut 0.3s 0.3s forwards;
+      opacity: 0;
+      transition-delay: 0.3s;
     }
 
     .projectsCards__Links {
       a {
         &:nth-child(1) {
-          animation: fadeOut 0.3s 0.5s forwards;
+          opacity: 0;
+          transition-delay: 0.5s;
         }
         &:nth-child(2) {
-          animation: fadeOut 0.3s 0.7s forwards;
+          opacity: 0;
+          transition-delay: 0.6s;
         }
       }
     }
   }
+
+  .projectsCards__ThirdSheet {
+    .projectsCards__TechImg img {
+      transition-delay: 1.5s;
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
+.projectsCards__Card.collapsed {
+  .projectsCards__FirstSheet .projectCards__SecondName {
     opacity: 0;
-    visibility: hidden;
   }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    z-index: 5;
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn2 {
-  from {
-    opacity: 0;
-    height: 0;
-  }
-  to {
-    z-index: 5;
-    height: 100%;
-    opacity: 1;
-  }
-}
-
-@keyframes expandHeight {
-  from {
+  .projectsCards__SecondSheet {
     height: 25%;
+    transition-delay: 1s;
+    .projectsCards__TextContainer {
+      p {
+        transition-delay: 0.5s;
+        opacity: 0;
+      }
+    }
+
+    .projectsCards__NameContainer {
+      opacity: 1;
+      transition-delay: 1.2s;
+    }
+
+    .projectsCards__Links {
+      a {
+        &:nth-child(1) {
+          opacity: 1;
+          transition-delay: 1.3s;
+        }
+        &:nth-child(2) {
+          opacity: 1;
+          transition-delay: 1.4s;
+        }
+      }
+    }
   }
-  to {
-    height: 100%;
-    border-radius: 15px;
+
+  .projectsCards__ThirdSheet {
+    .projectsCards__TechImg img {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100%);
+    }
   }
 }

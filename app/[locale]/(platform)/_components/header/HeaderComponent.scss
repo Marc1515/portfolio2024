@@ -9,7 +9,7 @@
   justify-content: end;
 
   @include mixins.languageButtonWidth(100%);
-  z-index: 10;
+  z-index: 6;
 }
 
 .header {
@@ -17,7 +17,7 @@
   box-sizing: border-box;
   @include mixins.heightHeader(100vh);
   width: 100%;
-  z-index: 3;
+  z-index: 5;
   top: 0;
   left: 0;
   bottom: 0;

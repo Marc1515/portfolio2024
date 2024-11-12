@@ -38,7 +38,9 @@ export const getPortfolioQuestions = async (locale) => {
       githubURL: "https://github.com/Marc1515/trello-app",
       pageURL: "https://trello.marcespana.com/",
       img: trelloApp,
-      projectText: t("projects_trello_text"),
+      projectText1: t("projects_trello_text1"),
+      projectText2: t("projects_trello_text2"),
+      projectText3: t("projects_trello_text3"),
       techBuild: {
         nextSVG: nextSvgIMG,
         htmlSVG: htmlSvgIMG,
@@ -52,7 +54,8 @@ export const getPortfolioQuestions = async (locale) => {
       githubURL: "https://github.com/Marc1515/CountriesApp",
       pageURL: "https://countries.marcespana.com/",
       img: countriesApp,
-      projectText: t("projects_country_text"),
+      projectText1: t("projects_country_text1"),
+      projectText2: t("projects_country_text2"),
       techBuild: {
         angularSVG: angularSvgIMG,
         htmlSVG: htmlSvgIMG,
@@ -66,7 +69,8 @@ export const getPortfolioQuestions = async (locale) => {
       githubURL: "https://github.com/Marc1515/gifs-app",
       pageURL: "https://gifs.marcespana.com",
       img: gifsAppImg,
-      projectText: t("projects_gifs_text"),
+      projectText1: t("projects_gifs_text1"),
+      projectText2: t("projects_gifs_text2"),
       techBuild: {
         angularSVG: angularSvgIMG,
         htmlSVG: htmlSvgIMG,
@@ -80,7 +84,9 @@ export const getPortfolioQuestions = async (locale) => {
       githubURL: "https://github.com/Marc1515/learn-english",
       pageURL: "https://learn.marcespana.com",
       img: learrnAppImg,
-      projectText: t("projects_learn_text"),
+      projectText1: t("projects_learn_text1"),
+      projectText2: t("projects_learn_text2"),
+      projectText3: t("projects_learn_text3"),
       techBuild: {
         htmlSVG: htmlSvgIMG,
         cssSVG: cssSvgIMG,
@@ -90,11 +96,13 @@ export const getPortfolioQuestions = async (locale) => {
     },
     {
       id: 6,
+
       nombre: "Trailers App",
       githubURL: "https://github.com/Marc1515/movieapp-youtube",
       pageURL: "https://trailer.marcespana.com",
       img: trailersAppImg,
-      projectText: t("projects_trailers_text"),
+      projectText1: t("projects_trailers_text1"),
+      projectText2: t("projects_trailers_text2"),
       techBuild: {
         htmlSVG: htmlSvgIMG,
         cssSVG: cssSvgIMG,
