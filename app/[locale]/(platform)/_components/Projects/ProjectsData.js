@@ -24,7 +24,8 @@ export const getPortfolioQuestions = async (locale) => {
       githubURL: "https://github.com/Marc1515/klimate",
       pageURL: "https://klimate.marcespana.com",
       img: weatherAppImg,
-      projectText: t("projects_weather_text"),
+      projectText1: t("projects_weather_text1"),
+      projectText2: t("projects_weather_text2"),
       techBuild: {
         htmlSVG: htmlSvgIMG,
         cssSVG: cssSvgIMG,
@@ -96,7 +97,6 @@ export const getPortfolioQuestions = async (locale) => {
     },
     {
       id: 6,
-
       nombre: "Trailers App",
       githubURL: "https://github.com/Marc1515/movieapp-youtube",
       pageURL: "https://trailer.marcespana.com",
